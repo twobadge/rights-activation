@@ -1,0 +1,14 @@
+{
+  "name": "rightsmanager",
+  "version": "1.0.0",
+  "description": "Sponsorship rights tracking tool",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jack Hannington",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
