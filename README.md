@@ -7,4 +7,4 @@ Key features:
   - Create, read, update and delete rights
   - Social media data from apis
   - User login with varying rights permissions
-  - Tables with searching and filtering data Tabs
+  - Tables with searching and filtering data tabs
