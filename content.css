@@ -267,6 +267,14 @@ input:hover {
 	padding-top: 8px;
 	font-size: 0.9rem;
 	display: block;
+	display:flex;
+	align-content: center;
+	align-items: center;
+	padding:5px;
+}
+
+.rights-list:hover {
+	cursor: pointer;
 }
 
 /* Components */
