@@ -34,9 +34,9 @@ var Client = mongoose.model('Client', clientSchema);
 // Create and save method
 
 Client.create({
-  name:"AJ Bell",
-  designation:"Tertiary sponsor",
-  value: 777777
+  name:"Capital Insurance",
+  designation:"Principal Partner",
+  value: 999999
 }, function(err, client){
   if(err){
     console.log("didn't work");
@@ -47,16 +47,32 @@ Client.create({
   }
 });
 
-// Find a client 
-Client.find({}, function(err, clients){
-  if(err){
-    console.log("Error");
-    console.log(err);
-  } else {
-    console.log(clients);
-    console.log("all the clients");
-  }
+// Rights Schema
+var rightSchema= new mongoose.Schema({
+  priority: Number,
+  description: String
 });
+
+// Create rights model to work with
+var Right = mongoose.model('Right', rightSchema);
+
+// Create and save rights
+
+Right.create ({
+  priority: 10,
+  description: "Launch Christmas campaign"
+});
+
+// Find a client 
+// Client.find({}, function(err, clients){
+//   if(err){
+//     console.log("Error");
+//     console.log(err);
+//   } else {
+//     console.log(clients);
+//     console.log("all the clients");
+//   }
+// });
 
 
 // Check connection
