@@ -50,6 +50,7 @@ Client.create({
 // Rights Schema
 var rightSchema= new mongoose.Schema({
   priority: Number,
+  category: String,
   description: String
 });
 
@@ -60,6 +61,7 @@ var Right = mongoose.model('Right', rightSchema);
 
 Right.create ({
   priority: 10,
+  category: "Digital",
   description: "Launch Christmas campaign"
 });
 
