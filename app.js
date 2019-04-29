@@ -2,8 +2,10 @@ var express = require('express'),
     app = express(),
     mongoose = require('mongoose');
 
+    app.set("view engine", "ejs");
+
 app.get('/', function (req, res) {
-      res.send('Local app has started')
+      res.render('rights-page')
     })
 
 
