@@ -1,9 +1,17 @@
 <% include partials/header %>
 
 <div class="container-fluid">
-  <div class="general-row">
+  <div class="row general-row client-about-row">
     <div class="col">
         <p>Welcome to your dashboard</p>
+        <p>Below you will see the clients you have added and their progress</p>
+        <% clients.forEach(function(client){ %>
+
+          
+        <h2><%= client.name %></h2>
+          <p><%= client.designation %></p>
+       <% }) %>
+
     </div>
   </div>
 </div>

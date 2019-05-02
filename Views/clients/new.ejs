@@ -1,0 +1,21 @@
+<% include ../partials/header %> 
+
+
+<div class="container">
+  <div class="row client-about-row">
+      <h3>Add new client</h3>
+  </div>
+<div class="row client-about-row">
+<form action="/clients" method="POST">
+  <label class="rights-title">Client Name:</label>
+  <input type="text" placeholder="Enter Name" name="client[name]">
+  <label class="rights-title">Client Designation:</label>
+  <input type="text" placeholder="Enter Designation" name="client[designation]">
+  <button>Submit</button>
+
+</form>
+  </div>
+</div>
+
+
+<% include ../partials/footer %>

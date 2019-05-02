@@ -1,7 +1,4 @@
-
 // Search function 
-
-
 function myFunction() {
   var input, filter, ul, li, a, i, txtValue;
   input = document.getElementById("partner-search");
@@ -20,7 +17,6 @@ function myFunction() {
 }
 
 // Table functions
-
 function sortTable(n) {
     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
     table = document.getElementById("data-table");
