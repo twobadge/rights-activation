@@ -31,8 +31,7 @@ var Client = mongoose.model('Client', clientSchema);
 //   }}
 // );
 
-// Create and save method
-
+// Create and save client
 Client.create({
   name:"Capital Insurance",
   designation:"Principal Partner",
