@@ -1,22 +1,31 @@
 var express = require('express'),
     app = express(),
-    mongoose = require('mongoose');
-
-    app.set("view engine", "ejs");
-
-app.get('/', function (req, res) {
-      res.render('rights-page')
-    })
+    mongoose = require('mongoose'),
+    ejs = require('ejs');
 
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
+// set the relevant view engine
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  // we're connected!
-});
+
+// app.get('/', function (req, res) {
+//       res.render('index')
+//     })
+
+app.get('/dashboard', function (req, res){
+  res.render('dashboard')
+})
+
+
+// var mongoose = require('mongoose');
+// mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
+
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function() {
+//   // we're connected!
+// });
 
 app.listen(3000)
 console.log("app has started");
