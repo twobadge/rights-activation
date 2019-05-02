@@ -13,17 +13,16 @@ app.use(express.static(__dirname + "/public"));
 mongoose.connect('mongodb://localhost:27017/rights_activation', {useNewUrlParser: true});
 
 
-
-//Requiring routes
-
-
-
 //Routes
 app.get('/', function (req, res) {
       res.render('index')
     })
 
 app.get('/dashboard', function (req, res){
+  res.render('dashboard')
+})
+
+app.get('*', function(req, res){
   res.render('dashboard')
 })
 
