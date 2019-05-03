@@ -3,15 +3,18 @@
 <div class="container-fluid">
   <div class="row general-row client-about-row">
     <div class="col">
-        <p>Welcome to your dashboard</p>
+        <h2>Welcome to your dashboard</h2>
         <p>Below you will see the clients you have added and their progress</p>
+        <a title="add new client" href="./clients/new"><button>Add new client</button></a>
+    </div>
+  </div>
+  <div class="row general-row client-about-row">
+      <div class="col">
         <% clients.forEach(function(client){ %>
-
-          
-        <h2><%= client.name %></h2>
+        <h3><%= client.name %></h3>
           <p><%= client.designation %></p>
+          <a href="/clients/<%= client._id %>">View Client</a>
        <% }) %>
-
     </div>
   </div>
 </div>

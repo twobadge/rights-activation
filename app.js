@@ -25,22 +25,20 @@ var clientSchema= new mongoose.Schema({
 var Client = mongoose.model('Client', clientSchema);
 
 //Routes
-app.get('/', function (req, res) {
-      res.render('dashboard')
-    })
 
-
+app.get("/", function(req, res){
+  res.redirect("/clients");
+})
 
 //Index
-
-app.get("/dashboard", function(req, res){
-   Client.find({}, function(err, clients){
-     if(err){
-       console.log(err);
-     } else {
-       res.render("dashboard", {clients:clients});
-     }
-   });
+app.get("/clients", function(req, res){
+  Client.find({}, function(err, clients){
+    if(err){
+      console.log("Error");
+    } else {
+      res.render("clients", {clients:clients});
+    }
+  });
 });
 
 //New route
@@ -55,9 +53,20 @@ app.post("/clients", function(req, res){
     if(err){
       res.render("/clients/new");
     } else {
-      res.redirect("dashboard");
+      res.redirect("/clients");
     }
     });
+  });
+
+ //Show route
+ app.get("/clients/:id", function(req, res){
+   Client.findById(req.params.id, function(err, foundClient){
+     if(err){
+       res.redirect("/clients");
+     } else {
+      res.render("./clients/show", {client:foundClient});
+     }
+   });
   });
 
 app.listen(3000)
