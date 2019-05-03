@@ -15,18 +15,18 @@
 
         <div class="col-lg-12 col-xs-12">
           <h3>
-            
+            <%= client.name %>
           </h3>
 
         </div>
         <div class="row general-row values-row">
           <div class="col-xs-6 key-values">
             <span class="value-description">Designation</span> <br />
-            <span class="values">Official East Stand sponsor</span>
+            <span class="values"><%= client.designation %></span>
           </div>
           <div class="col-xs-6 key-values">
             <span class="value-description">Value</span> <br />
-            <span class="values">£999,999</span>
+            <span class="values">£<%= client.value %></span>
           </div>
           <div class="col-xs-6 key-values">
             <span class="value-description">Start Date</span> <br />
