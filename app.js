@@ -1,4 +1,5 @@
 var express = require('express'),
+    methodOverride = require("method-override"),
     app = express(),
     bodyParser = require("body-parser"),
     mongoose = require('mongoose'),
@@ -10,6 +11,7 @@ var express = require('express'),
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(methodOverride("_method"));
 
 //Environment variables
 mongoose.connect('mongodb://localhost:27017/rights_activation', {useNewUrlParser: true});
@@ -68,6 +70,30 @@ app.post("/clients", function(req, res){
      }
    });
   });
+
+  //Edit route
+  app.get("/clients/:id/edit", function(req, res){
+    Client.findById(req.params.id, function(err, foundClient){
+      if(err){
+        res.redirect("/clients");
+      } else {
+        res.render("./clients/edit", {client: foundClient});
+      }
+    });
+  })
+
+  //update route
+  app.put("/clients/:id", function(req, res){
+    Client.findByIdAndUpdate(req.params.id, req.body.client, function(err, updatedClient){
+      if(err){
+        console.log("Could not update client");
+        res.redirect("/clients");
+      } else {
+        res.redirect("/clients/" + req.params.id);
+      }
+    });
+  });
+
 
 app.listen(3000)
 console.log("app has started");

@@ -8,6 +8,7 @@ Lightest - Mantee - #8F9AA5;
 Darker - Gunmetal #263443;
 Darkest - Dark gunmetal #18212A;
 Navs - Yankee Blue #212944;
+background - #F5F8FA;
 */
 
 
@@ -41,13 +42,8 @@ h3 {
 h4 {
 	font-weight: bold;
 	font-size: 1.05rem;
+	margin-bottom:4px;
 }
-
-.heading-primary {
-	/* color: #4C5F9E; */
-	margin-bottom: 15px;
-}
-
 ul,
 li {
 	list-style-type: none;
@@ -78,6 +74,10 @@ li {
 
 .navbar-brand {
 	margin-left: 15px;
+}
+
+.navbar-brand, .abs {
+	font-weight: 300;
 }
 
 .navbar-nav {
@@ -161,6 +161,7 @@ i {
 
 }
 
+/* Stops inset border appearing on hover */
 #sign-in-button {
 	box-shadow: none !important;
 }
@@ -173,8 +174,7 @@ i {
 input {
 	outline: none;
 	width: 100%;
-	margin: 10px 10px 10px 0px;
-	;
+	margin: 10px 10px 10px 0px;;
 	border: 0px solid #ededed;
 	/* background-color: hsl(220, 12%, 95%); */
 	border-radius: 3px;
@@ -234,6 +234,10 @@ input:hover {
 	margin: 0px 25px 0px 0px;
 }
 
+.values {
+	font-weight: 500;
+}
+
 .value-description {
 	color: #8F9AA5;
 }
@@ -273,7 +277,24 @@ input:hover {
 }
 
 /* Components */
+/* Client card */
 
+
+.client-card-name, .client-card-values {
+	display: inline;
+	
+}
+
+.client-card-logo {
+	border-radius: 50%;
+	margin-right:5px;
+}
+
+.client-card:hover {
+	-webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+	box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+	transition: transform .2s;
+}
 
 /* tables */
 
@@ -309,10 +330,12 @@ td {
 button {
 	border: none;
 	border-radius: 4px;
-	padding: 2px 10px;
+	/* padding: 2px 10px; */
 	-webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 	box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 	transition: transform .2s;
+	font-size: 0.9rem;
+	/* font-weight: lighter; */
 }
 
 button:hover {
@@ -325,10 +348,25 @@ button:focus {
 
 
 .primary-button {
-	color: #33475b;
-	font-size: 0.9rem;
-	font-weight: lighter;
+	color: #263443;
+	background-color:#F5F8FA;
 	margin-right: 5px;
+	
+}
+
+.secondary-button {
+	color:#ffffff;
+	background-color: #263443;
+	margin-right: 5px;
+	
+}
+
+.info-button {
+	background-color:#FACF71;
+}
+
+.button-group {
+	float:right;
 }
 
 /* media queries */

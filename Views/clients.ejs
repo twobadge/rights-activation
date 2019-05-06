@@ -5,7 +5,7 @@
     <div class="col">
         <h2>Welcome to your dashboard</h2>
         <p>Below you will see the clients you have added and their progress</p>
-        <a title="add new client" href="./clients/new"><button>Add new client</button></a>
+        <a title="add new client" href="/clients/new"><button>Add new client</button></a>
     </div>
   </div>
   <div class="row general-row client-about-row">
@@ -13,7 +13,7 @@
         <% clients.forEach(function(client){ %>
         <h3><%= client.name %></h3>
           <p><%= client.designation %></p>
-          <a href="/clients/<%= client._id %>">View Client</a>
+          <a href="/clients/<%= client._id %>"><button class="primary-button">View</button></a><button class="secondary-button">Edit</button>
        <% }) %>
     </div>
   </div>

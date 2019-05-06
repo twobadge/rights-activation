@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+
+
+<div class="container">
+  <div class="row client-about-row">
+    <h3>Edit <%= client.name %></h3>
+  </div>
+  <div class="row client-about-row">
+    <form action="/clients/<%= client._id %>?_method=PUT" method="POST">
+      <label class="rights-title">Business Name:</label>
+      <input type="text" value="<%= client.name %>" name="client[name]">
+      <label class="rights-title">Client Designation / Deal Name:</label>
+      <input type="text" value="<%= client.designation %>" name="client[designation]">
+      <label class="rights-title">Contract Value:</label>
+      <input type="number" value="<%= client.value %>" name="client[value]">
+      <label class="rights-title" for="start">Start date:</label>
+      <input type="date" id="start" name="trip-start" value="2019-01-01" min="2018-01-01" max="2040-12-31">
+      <label class="rights-title" for="start">Expiry date:</label>
+      <input type="date" id="start" name="trip-start" value="2020-01-01" min="2018-01-01" max="2040-12-31">
+      <button>Submit</button>
+
+    </form>
+  </div>
+</div>
+
+
+<% include ../partials/footer %>
