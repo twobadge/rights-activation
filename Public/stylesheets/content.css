@@ -176,11 +176,15 @@ input {
 	width: 100%;
 	margin: 10px 10px 10px 0px;;
 	border: 0px solid #ededed;
-	/* background-color: hsl(220, 12%, 95%); */
+	background-color: hsl(220, 12%, 95%);
 	border-radius: 3px;
 	color: #3C3C3C;
 	padding: 3px;
 	/*  */
+}
+
+.search-bar {
+	background-color:#ffffff;
 }
 
 input:hover {
@@ -225,13 +229,16 @@ input:hover {
 	margin-top: 15px;
 	background-color: #ffffff;
 	line-height: 1.8rem;
-	box-shadow: 0 1px 5px 0 rgba(45, 62, 80, .12);
+	/* box-shadow: 0 1px 5px 0 rgba(45, 62, 80, .12); */
 	border-radius: 3px;
-
 }
 
 .key-values {
 	margin: 0px 25px 0px 0px;
+}
+
+.client-info-modal {
+	cursor: pointer;
 }
 
 .values {
@@ -279,10 +286,14 @@ input:hover {
 /* Components */
 /* Client card */
 
+.client-card:hover {
+	-webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+	box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+}
+
 
 .client-card-name, .client-card-values {
 	display: inline;
-	
 }
 
 .client-card-logo {
@@ -330,16 +341,19 @@ td {
 button {
 	border: none;
 	border-radius: 4px;
-	/* padding: 2px 10px; */
-	-webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-	box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+	padding: 3px 10px;
+	/* box-shadow: 0px 1px 2px lightgrey; */
 	transition: transform .2s;
 	font-size: 0.9rem;
 	/* font-weight: lighter; */
 }
 
 button:hover {
-	transform: scale(1.05);
+	/* transform: scale(1.02); */
+	opacity: 0.8;
+	box-shadow: 0px 1px 2px lightgrey;
+		/* -webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+	box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08); */
 }
 
 button:focus {
@@ -350,7 +364,7 @@ button:focus {
 .primary-button {
 	color: #263443;
 	background-color:#F5F8FA;
-	margin-right: 5px;
+	margin-right: 10px;
 	
 }
 
@@ -359,6 +373,12 @@ button:focus {
 	background-color: #263443;
 	margin-right: 5px;
 	
+}
+
+.warning-button {
+	background-color:#900300;
+	color:#ffffff;
+	margin-top:10px;
 }
 
 .info-button {

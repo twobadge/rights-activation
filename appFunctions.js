@@ -71,3 +71,8 @@ function sortTable(n) {
       }
     }
   }
+
+  //alert
+function deleteWarning() {
+  alert("Doing this will delete ALL client data and you will not be able to recover it")
+};

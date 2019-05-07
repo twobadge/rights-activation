@@ -8,15 +8,16 @@
         <a title="add new client" href="/clients/new"><button>Add new client</button></a>
     </div>
   </div>
-  <div class="row general-row client-about-row">
+  <% clients.forEach(function(client){ %>
+  <div class="row general-row client-about-row client-card">
       <div class="col">
-        <% clients.forEach(function(client){ %>
-        <h3><%= client.name %></h3>
-          <p><%= client.designation %></p>
-          <a href="/clients/<%= client._id %>"><button class="primary-button">View</button></a><button class="secondary-button">Edit</button>
-       <% }) %>
+        
+        <h4 class="client-card-name"><%= client.name %> - </h4>
+          <p class="client-card-values"><%= client.designation %></p>
+          <div class="button-group"><a href="/clients/<%= client._id %>"><button class="primary-button">View</button></a><a href="/clients/<%= client._id %>/edit"><button class="secondary-button">Edit</button></a></div>
     </div>
   </div>
+  <% }) %>
 </div>
 
 

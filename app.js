@@ -17,14 +17,15 @@ app.use(methodOverride("_method"));
 mongoose.connect('mongodb://localhost:27017/rights_activation', {useNewUrlParser: true});
 
 //Client schema
-var clientSchema= new mongoose.Schema({
+const clientSchema= new mongoose.Schema({
   name: String,
   designation: String,
-  value: Number
+  value: Number,
+  rights: String
 });
 
 //Client model
-var Client = mongoose.model('Client', clientSchema);
+const Client = mongoose.model('Client', clientSchema);
 
 //Routes
 
@@ -93,6 +94,17 @@ app.post("/clients", function(req, res){
       }
     });
   });
+
+//Delete route
+app.delete("/clients/:id", function(req, res){
+  Client.findByIdAndRemove(req.params.id, function(err){
+    if(err){
+      res.redirect("/clients");
+    } else {
+      res.redirect("/clients")
+    }
+  })
+});
 
 
 app.listen(3000)
