@@ -38,15 +38,15 @@
           </div>
           <div class="col-xs-6 key-values">
             <span class="value-description">Contact</span> <br />
-            <span class="values">Adam Smith</span>
+            <span class="values"><%= client.contact %></span>
           </div>
           <div class="col-xs-6 key-values">
             <span class="value-description">Email</span> <br />
-            <span class="values">adam@capitalinsurance.com</span>
+            <span class="values"><%= client.email %></span>
           </div>
           <div class="col-xs-6 key-values">
             <span class="value-description">Number</span> <br />
-            <span class="values">07774774770</span>
+            <span class="values"><%= client.contact_number %></span>
           </div>
           <div class="col-xs-6 key-values">
               <span class="value-description">More Info</span> <br />
@@ -62,7 +62,7 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <%= client.notes %>
       </div>
       <div class="modal-footer">
         <button type="button" class="secondary-button" data-dismiss="modal">Close</button>

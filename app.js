@@ -16,16 +16,77 @@ app.use(methodOverride("_method"));
 //Environment variables
 mongoose.connect('mongodb://localhost:27017/rights_activation', {useNewUrlParser: true});
 
+//Rights Schema
+var rightSchema= new mongoose.Schema({
+  priority: Number,
+  category: String,
+  description: String
+});
+
+//Rights model
+var Right = mongoose.model('Right', rightSchema);
+
+//Create and save rights
+Right.create ({
+  priority: 9,
+  category: "Digital",
+  description: "Launch Christmas campaign"
+});
+
 //Client schema
-const clientSchema= new mongoose.Schema({
+var clientSchema= new mongoose.Schema({
   name: String,
   designation: String,
   value: Number,
-  rights: String
+  start_date: Date,
+  end_date: Date,
+  contact: String,
+  email: String,
+  contact_number: Number,
+  notes: String,
+  rights: [rightSchema]
 });
 
 //Client model
-const Client = mongoose.model('Client', clientSchema);
+var Client = mongoose.model('Client', clientSchema);
+
+
+//Find the client
+Client.findOne({name:"Jack"}, function(err, client){
+  if(err){
+  console.log(err);
+  } else {
+    client.rights.push({
+      priority: 1000,
+      description: "more important than before"
+    });
+    client.save(function(err, client){
+      if(err){
+        console.log(err);
+      } else {
+        console.log(client);
+      }
+    })
+  }
+});
+
+// var newClient = new Client({
+//   name: "Jack",
+//   designation: "Captain"
+// });
+
+// newClient.rights.push({
+//   priority: 900,
+//   description:"Really important information"
+// });
+
+// newClient.save(function(err, client){
+//   if(err){
+//     console.log(err);
+//   } else {
+//     console.log(client);
+//   }
+// });
 
 //Routes
 

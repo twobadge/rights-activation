@@ -1,5 +1,5 @@
 var mongoose  = require ("mongoose");
-mongoose.connect('mongodb://localhost:27017/rights_activation', {useNewUrlParser: true});
+// mongoose.connect('mongodb://localhost:27017/rights_activation', {useNewUrlParser: true});
 
 
 // Define clients schema
