@@ -1,20 +1,20 @@
 <% include partials/header %>
 
-<div class="container-fluid">
+<div class="container">
   <div class="row general-row client-about-row">
     <div class="col">
         <h2>Welcome to your dashboard</h2>
         <p>Below you will see the clients you have added and their progress</p>
-        <a title="add new client" href="/clients/new"><button>Add new client</button></a>
+        <a title="add new client" href="/clients/new"><button class="dark-button">Add new client</button></a>
     </div>
   </div>
+  
   <% clients.forEach(function(client){ %>
   <div class="row general-row client-about-row client-card">
       <div class="col">
-        
         <h4 class="client-card-name"><%= client.name %> - </h4>
           <p class="client-card-values"><%= client.designation %></p>
-          <div class="button-group"><a href="/clients/<%= client._id %>"><button class="primary-button">View</button></a><a href="/clients/<%= client._id %>/edit"><button class="secondary-button">Edit</button></a></div>
+          <div class="button-group"><a href="/clients/<%= client._id %>"><button class="dark-button">View</button></a><a href="/clients/<%= client._id %>/edit"><button class="info-button">Edit</button></a></div>
     </div>
   </div>
   <% }) %>

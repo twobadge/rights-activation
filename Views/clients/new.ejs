@@ -23,13 +23,13 @@
       <input type="date" id="start" name="trip-start" value="2019-01-01" min="2018-01-01" max="2040-12-31">
       <label class="rights-title" for="start">Expiry date:</label>
       <input type="date" id="start" name="trip-start" value="2020-01-01" min="2018-01-01" max="2040-12-31">
-      <label class="rights-title">Additional Notes:</label>    
-      <input class="client-notes" type="textarea" placeholder="Add any additonal client notes here" name="client[notes]">
-      <button>Submit</button>
+      <label for="client-notes" class="rights-title">Additional Notes:</label>    
+      <textarea id="client-notes" placeholder="Add any additonal client notes here" name="client[notes]"></textarea>
+      <button class="primary-button">Submit</button>
 
     </form>
   </div>
-</div>s
+</div>
 
 
 <% include ../partials/footer %>

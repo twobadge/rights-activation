@@ -1,23 +1,27 @@
 <% include ../partials/header %>
+
+
 <div class="container-fluid">
   <div class="row content-container">
     <div class="col-xs-12 col-lg-2 vertical-nav fixed-top">
 
       <!-- Horizontal partner navigation -->
-      <input class="search-bar" id="partner-search" onkeyup="myFunction()" type="text" placeholder="Search..." name="search"
-        title="Search for client">
+      <input class="search-bar" id="partner-search" onkeyup="myFunction()" type="text" placeholder="Search..."
+        name="search" title="Search for client">
       <ul id="myUL">
-        <li class="v-bar-link"> <a></a></li>
+        <li class="v-bar-link"> 
+        
+        </li>
       </ul>
     </div>
     <div class="rights-section col-lg-10">
       <div class="row general-row headline-values">
 
         <div class="col-lg-12 col-xs-12">
-          <h3 >
+          <h3>
             <%= client.name %>
           </h3>
-          
+
         </div>
         <div class="row general-row values-row">
           <div class="col-xs-6 key-values">
@@ -49,34 +53,34 @@
             <span class="values"><%= client.contact_number %></span>
           </div>
           <div class="col-xs-6 key-values">
-              <span class="value-description">More Info</span> <br />
-              <span class="values client-info-modal" data-toggle="modal" data-target="#exampleModalCenter">Click for more details  <i class="fas fa-info-circle"></i></span>
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Client Details</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= client.notes %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="secondary-button" data-dismiss="modal">Close</button>
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-      </div>
-    </div>
-  </div>
-</div>
+            <span class="value-description">More Info</span> <br />
+            <span class="values client-info-modal" data-toggle="modal" data-target="#exampleModalCenter">Click for more
+              details <i class="fas fa-info-circle"></i></span>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Client Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <%= client.notes %>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="secondary-button" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
       </div>
 
-      <!-- Objectives row -->
-
+      <!-- Objectives section -->
       <div class="row general-row client-about-row">
         <div class="col-xs-12">
           <h4 class="heading-primary">OBJECTIVES</h4>
@@ -87,94 +91,6 @@
             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
             fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
             mollit anim id est laborum."</p>
-
-        </div>
-      </div>
-      <div class="row general-row client-about-row">
-        <div class="col">
-          <h4 class="heading-primary">PERFORMANCE</h4>
-          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
-                aria-controls="pills-home" aria-selected="true">Dashboard</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link metrics" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-                aria-controls="pills-profile" aria-selected="false">Twitter</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link metrics" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
-                aria-controls="pills-contact" aria-selected="false">Facebook</a>
-            </li>
-          </ul>
-          <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-              ...
-            </div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-
-            </div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-              <table id="data-table" class="table">
-                <thead>
-                  <tr>
-                    <td onclick="sortTable(0)">
-                      Channel <i class="fas fa-sort"></i>
-                    </td>
-                    <td>
-                      Name <i class="fas fa-sort"></i>
-                    </td>
-                    <td>
-                      Reach <i class="fas fa-sort"></i>
-                    </td>
-                    <td>
-                      Engagement <i class="fas fa-sort"></i>
-                    </td>
-                    <td>
-                      Reach <i class="fas fa-sort"></i>
-                    </td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      Facebook
-                    </td>
-                    <td>
-                      3402
-                    </td>
-                    <td>
-                      9021
-                    </td>
-                    <td>
-                      Facebook
-                    </td>
-                    <td>
-                      3402
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Facebook
-                    </td>
-                    <td>
-                      3402
-                    </td>
-                    <td>
-                      9021
-                    </td>
-                    <td>
-                      Twitter
-                    </td>
-                    <td>
-                      3402
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
         </div>
       </div>
 
@@ -182,55 +98,22 @@
       <div class="row general-row client-about-row">
         <div class="col-xs-12 col-lg-12 delivery-section">
           <h4 class="heading-primary">DELIVERY</h4>
-          <p class="rights-title">Digital Rights</p>
-          <ul>
-            <li class="rights-list">
-              <p><%= client.rights %></p>
-            </li>
-            <li class="rights-list">
-              3 Social media campaigns per season
-            </li>
-            <li class="rights-list">
-              3 Social media campaigns per season
-            </li>
-            <li class="rights-list">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et
-                dolore magna aliqua.</p>
-            </li>
-            <li class="rights-list">
-              3 Social media campaigns per season
-            </li>
-            <li class="rights-list">
-              3 Social media campaigns per season
-            </li>
-          </ul>
-
-          <p class="rights-title">Branding</p>
-          <ul>
-            <li class="rights-list">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et
-                dolore magna aliqua.</p>
-            </li>
-            <li class="rights-list">
-              3 Social media campaigns per season
-            </li>
-            <li class="rights-list">
-              3 Social media campaigns per season
-            </li>
-            <li class="rights-list">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et
-                dolore magna aliqua.</p>
-            </li>
-            <li class="rights-list">
-              3 Social media campaigns per season
-            </li>
-            <li class="rights-list">
-              3 Social media campaigns per season
-            </li>
-          </ul>
+          <a href="/clients/<%= client._id %>/rights/new"><button class="dark-button move-right" >Add Right</button></a>
+          
+          <table id="data-table" style="width:100%;">
+            <tr>
+              <td onclick="sortTable(0)">Category <i class="fas fa-sort"></i></td>
+              <td>Detail</td>
+              <td>Progress</td>
+            </tr>
+            <% client.rights.forEach(function(right){ %>
+            <tr>
+              <td> <%= right.category %> </td>
+              <td> <%= right.description %></td>
+              <td> <%= right.complete %></td>
+            </tr>
+            <% }) %>
+          </table>
         </div>
       </div>
 
@@ -244,6 +127,3 @@
 </div>
 
 <% include ../partials/footer %>
-
-
-

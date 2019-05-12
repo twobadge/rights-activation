@@ -1,17 +1,13 @@
 /* Document styles */
-
-
-/* Colors
+/* Colours
+Background-color: #F5F8FA;
+Font-color - Gunmetal #263443;
+Navs - Yankee Blue #212944;
 Primary - Charcoal #33475b;
 Lighter - Payne's grey #586878;
 Lightest - Mantee - #8F9AA5;
-Darker - Gunmetal #263443;
 Darkest - Dark gunmetal #18212A;
-Navs - Yankee Blue #212944;
-background - #F5F8FA;
 */
-
-
 
 html,
 body {
@@ -25,12 +21,10 @@ body {
 	font-size: 0.9rem;
 	background-color: #F5F8FA;
 	color: #263443;
-	/* color:black; */
 	font-weight: lighter;
 }
 
-input,
-p {
+input, p {
 	padding: 2px;
 	margin: 0px;
 }
@@ -44,8 +38,7 @@ h4 {
 	font-size: 1.05rem;
 	margin-bottom:4px;
 }
-ul,
-li {
+ul, li {
 	list-style-type: none;
 	text-align: left;
 	padding: 0px;
@@ -53,8 +46,6 @@ li {
 }
 
 li {
-	/* padding: 5px;
-	*/
 	cursor: pointer;
 	padding-right: 3px;
 }
@@ -62,8 +53,6 @@ li {
 .navbar {
 	padding: 0px;
 	background-color: #212944 !important;
-	/* background: linear-gradient(to right, #020B4A, #173BA5, #2450C2);
-  background-color: #020B4A; */
 	font-size: 1rem;
 	box-shadow: 0 0 10px grey;
 }
@@ -146,7 +135,6 @@ a {
 	transition: 0.2s;
 }
 
-
 i {
 	font-size: 16px;
 }
@@ -158,7 +146,6 @@ i {
 
 .nav-link:hover {
 	box-shadow: inset 0 -2px #14aaf5;
-
 }
 
 /* Stops inset border appearing on hover */
@@ -170,8 +157,8 @@ i {
 	text-align: left;
 }
 
-/* Search box style */
-input {
+/* input styles */
+input, textarea {
 	outline: none;
 	width: 100%;
 	margin: 10px 10px 10px 0px;;
@@ -185,11 +172,6 @@ input {
 
 .search-bar {
 	background-color:#ffffff;
-}
-
-input:hover {
-	/* box-shadow: 3px 3px 3px #aeaeae;
-	*/
 	box-shadow: inset 0 -2px #aeaeae;
 }
 
@@ -216,6 +198,10 @@ input:hover {
 	margin: 0px 0px 0px 0px;
 }
 
+.heading-primary {
+	display: inline;
+}
+
 .headline-values {
 	margin-top: 0px;
 	background-color: #F5F8FA;
@@ -229,7 +215,7 @@ input:hover {
 	margin-top: 15px;
 	background-color: #ffffff;
 	line-height: 1.8rem;
-	/* box-shadow: 0 1px 5px 0 rgba(45, 62, 80, .12); */
+	box-shadow: 0 1px 5px 0 rgba(45, 62, 80, .12);
 	border-radius: 3px;
 }
 
@@ -291,7 +277,6 @@ input:hover {
 	box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 }
 
-
 .client-card-name, .client-card-values {
 	display: inline;
 }
@@ -301,18 +286,10 @@ input:hover {
 	margin-right:5px;
 }
 
-.client-card:hover {
-	-webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-	box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-	transition: transform .2s;
-}
-
 /* tables */
 
-.mb-3
-
 /* A boostrap class which added unwanted margin*/
-	{
+.mb-3 {
 	margin-bottom: 0.5rem !important;
 }
 
@@ -335,8 +312,6 @@ td {
 	padding: 10px;
 }
 
-
-
 /* Buttons */
 button {
 	border: none;
@@ -351,28 +326,28 @@ button {
 button:hover {
 	/* transform: scale(1.02); */
 	opacity: 0.8;
-	box-shadow: 0px 1px 2px lightgrey;
-		/* -webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-	box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08); */
+		-webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+	box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 }
 
 button:focus {
 	outline: 0;
 }
 
+.move-right {
+	float:right;
+}
 
-.primary-button {
+.light-button {
 	color: #263443;
 	background-color:#F5F8FA;
 	margin-right: 10px;
-	
 }
 
-.secondary-button {
+.dark-button {
 	color:#ffffff;
 	background-color: #263443;
 	margin-right: 5px;
-	
 }
 
 .warning-button {

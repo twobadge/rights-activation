@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+
+
+<div class="container">
+  <div class="row client-about-row">
+    <h3>Add New Rights to <%= client.name %></h3>
+  </div>
+  <div class="row client-about-row">
+    <form action="/clients/<%= client._id %>/rights" method="POST">
+      <label class="rights-title">Category</label>
+      <select name="right[category]" id="category-select" required>
+        <option value="Please Select Category">No Category Selected</option>
+        <option value="Digital">Digital</option>
+        <option value="Branding">Branding</option>
+        <option value="Events">Events</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="rights-description" class="rights-title">Description</label>
+      <textarea id="rights-description" placeholder="Enter right details..." name="right[description]"></textarea>
+      <select name="right[complete]" id="complete-select" required>
+          <option value="incomplete">Incomplete</option>
+          <option value="complete">Complete</option>
+          <option value="in-progress">In progress</option>
+        </select>
+      <br>
+      <button class="dark-button">Submit</button>
+    </form>
+  </div>
+</div>
+</div>
+
+
+<% include ../partials/footer %>

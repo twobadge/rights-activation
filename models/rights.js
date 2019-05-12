@@ -1,15 +1,19 @@
-// var mongoose = require ("mongoose");
+var mongoose = require ("mongoose");
 
-// var rightSchema= new mongoose.Schema({
-//   priority: Number,
-//   category: String,
-//   description: String
-// });
+var rightSchema= new mongoose.Schema({
+  priority: Number,
+  category: String,
+  description: String,
+  complete: String
+});
 
-// // Create rights model to work with
-// var Right = mongoose.model('Right', rightSchema);
+// Create rights model to work with
+var Right = mongoose.model('Right', rightSchema);
 
-// // Create and save rights
+module.exports = mongoose.model("Right", rightSchema);
+
+
+// Create and save rights
 
 // Right.create ({
 //   priority: 9,
@@ -17,4 +21,21 @@
 //   description: "Launch Christmas campaign"
 // });
 
-// module.exports = mongoose.model("Right", rightSchema);
+
+//Pushing rights to clients and saving
+
+// newClient.rights.push({
+//   priority: 900,
+//   description:"Really important information"
+// });
+
+// newClient.save(function(err, client){
+//   if(err){
+//     console.log(err);
+//   } else {
+//     console.log(client);
+//   }
+// });
+
+//Find the client, push rights and save to DB
+
