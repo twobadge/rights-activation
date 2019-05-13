@@ -281,9 +281,27 @@ input, textarea {
 	display: inline;
 }
 
+.client-card-image {
+	padding:0px;
+}
+
 .client-card-logo {
 	border-radius: 50%;
 	margin-right:5px;
+	display: inline;
+}
+
+.client-card-details {
+	margin:5px 0px 5px 0px;
+}
+
+.client-card-square {
+	width:250px;
+	margin-top: 10px;
+	padding:10px;
+	background-color: #ffffff;
+	box-shadow: 0 1px 5px 0 rgba(45, 62, 80, .12);
+	border-radius: 3px;
 }
 
 /* tables */
@@ -342,6 +360,7 @@ button:focus {
 	color: #263443;
 	background-color:#F5F8FA;
 	margin-right: 10px;
+	box-shadow: 1px 1px 1px lightgrey;
 }
 
 .dark-button {
