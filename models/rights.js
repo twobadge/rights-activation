@@ -4,6 +4,7 @@ var rightSchema= new mongoose.Schema({
   priority: Number,
   category: String,
   description: String,
+  attachments: String,
   complete: String
 });
 

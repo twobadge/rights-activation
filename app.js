@@ -109,6 +109,21 @@ app.delete("/clients/:id", function (req, res) {
 // Comment routes
 // =================================
 
+//rights index
+
+app.get("/rights", function (req, res) {
+  Right.find({}, function (err, rights) {
+    if (err) {
+      console.log("Error");
+    } else {
+      res.render("rights/rights", {
+        rights: rights
+      });
+    }
+  });
+});
+
+
 // new rights
 app.get("/clients/:id/rights/new", function (req, res) {
   //find client by id 
