@@ -158,6 +158,8 @@ app.post("/clients/:id/rights", function (req, res) {
   });
 });
 
+//Edit rights
+
 
 
 

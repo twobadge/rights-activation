@@ -19,7 +19,7 @@
 
         <div class="col-lg-12 col-xs-12">
           <h3>
-            <%= client.name %>
+              <%= client.name %>
           </h3>
 
         </div>
@@ -96,15 +96,13 @@
 
       <!-- Delivery section  -->
       <div class="row general-row client-about-row">
-        <div class="col-xs-12 col-lg-12 delivery-section">
+        <div class="col-xs-12 col-lg-12 delivery-sect  ion">
           <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-           <h4 class="heading-primary">DELIVERY <i class="fas fa-chevron-down"></i></h4></a>
+           <h4 class="heading-primary">DELIVERY</h4></a>
           <a href="/clients/<%= client._id %>/rights/new"><button class="dark-button move-right" >Add Right</button></a>
           <br>
           <br>
-          <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-                <table id="data-table" style="width:100%;">
+              <table id="data-table" style="width:100%;">
                     <tr>
                       <td onclick="sortTable(0)">Category <i class="fas fa-sort"></i></td>
                       <td>Detail</td>
@@ -120,9 +118,6 @@
                     </tr>
                     <% }) %>
                   </table>
-            </div>
-          </div>
-
         </div>
       </div>
 

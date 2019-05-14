@@ -1,28 +1,31 @@
 <% include partials/header %>
 
-<div class="container">
-  <div class="row general-row client-about-row">
+<div class="container-fluid">
+  <div class="row general-row headline-values">
     <div class="col">
-      <h2>Welcome to your dashboard</h2>
-      <p>Below you will see the clients you have added and their progress</p>
-      <a title="add new client" href="/clients/new"><button class="dark-button">Add new client</button></a>
+      <h3 style="display:inline;padding-left:10px;">Overview</h3>
+      <a title="add new client" href="/clients/new"><button class="dark-button move-right">NEW CLIENT   <i class="fas fa-plus-circle"></i></button></a>
     </div>
   </div>
   <div class="row general-row">
     <% clients.forEach(function(client){ %>
-    <div class="col-3">
+  
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+        <a target="_blank" class="client-card-link" href="/clients/<%= client._id %>">
       <div class="client-card-square">
         <div class="row general-row">
           <div class="col-2 client-card-image">
-            <img class="client-card-logo" src="https://via.placeholder.com/50x50"></div>
+            <img class="client-card-logo" alt="client logo" src="https://d2cx26qpfwuhvu.cloudfront.net/sale/wp-content/uploads/2018/07/23161039/UKFast.svg"></div>
           <div class="col-10">
-            <p><%= client.name %> </p>
+            <p class="values"><%= client.name %> </p>
             <p><%= client.designation %></p>
           </div>
         </div>
         <div class="row general-row client-card-details">
           <div class="col">
             <p> <span class="value-description"> Value</span> £<%= client.value %></p>
+            <p><span class="value-description"> Start:</span> 01/01/2019   <span class="value-description"> |   Expiry: </span> 01/01/2020 </p>
+             
           </div>
         </div>
         <div class="row general-row">
@@ -32,6 +35,7 @@
           </div>
         </div>
       </div>
+      </a>
     </div>
     <% }) %>
   </div>
