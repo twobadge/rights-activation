@@ -1,34 +1,102 @@
 <% include ../partials/header %>
 
 
-<div class="container">
-  <div class="row client-about-row">
-    <h3>Add new client</h3>
-  </div>
-  <div class="row client-about-row">
+<div class="container form-container">
+    <div class="row form-section form-header">
+        <div class="col-12">
+          <h5>New Client</h5>
+        </div>
+      </div>
+    <!--  Business Details  -->
     <form action="/clients" method="POST">
-      <label class="rights-title">Business Name:</label>
-      <input type="text" placeholder="Enter Name" name="client[name]">
-      <label class="rights-title">Client Designation / Deal Name:</label>
-      <input type="text" placeholder="Enter Designation" name="client[designation]">
-      <label class="rights-title">Contract Value:</label>
-      <input type="number" placeholder="1000.00" name="client[value]">
-      <label class="rights-title">Contact Name</label>
-      <input type="text" placeholder="Adam Smith" name="client[contact]">
-      <label class="rights-title">Contact Email</label>
-      <input type="text" placeholder="Adam Smith" name="client[email]">
-      <label class="rights-title">Contact Number</label>
-      <input type="text" placeholder="Adam Smith" name="client[contact_number]">
-      <label class="rights-title" for="start">Start date:</label>
-      <input type="date" id="start" name="trip-start" value="2019-01-01" min="2018-01-01" max="2040-12-31">
-      <label class="rights-title" for="start">Expiry date:</label>
-      <input type="date" id="start" name="trip-start" value="2020-01-01" min="2018-01-01" max="2040-12-31">
-      <label for="client-notes" class="rights-title">Additional Notes:</label>    
-      <textarea id="client-notes" placeholder="Add any additonal client notes here" name="client[notes]"></textarea>
-      <button class="primary-button">Submit</button>
+        <div class="row form-section">
+          <div class="col-4">
+            <p class="form-section-title">Deal Information</p>
+            <p class="form-description">Enter all information relating to the contract here</p>
+          </div>
+          <div class="col-8">
+            <div class="row">
+              <div class="col">
+           
+                <label for="client-name"> Business Name </label>
+                <input type="text" name="client[name]">
+              </div>
+            </div>
+           <div class="row">
+              <div class="col">
+                <label>Designation</label>
+                <input type="text" name="client[designation]" >
+              </div>
+            </div>
+         <div class="row">
+              <div class="col">
+                <label>Value</label>
+                <input class="number-input" type="number" name="client[value]">
+              </div>
+            </div>
+                 <div class="row">
+              <div class="col">
+                <label>Start Date</label>
+                <input class="date-input" type="date">
+              </div>
+               <div class="col">
+                <label>End Date</label>
+                <input class="date-input" type="date">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+    <!--  Deal Information  -->
+         <div class="row form-section">
+          <div class="col-4">
+            <p class="form-section-title">Contact Details</p>
+             <p class="form-description">This section is for the contacts personal information. <br>Use the notes for additional information about the client.</p>
+          </div>
+          <div class="col-8">
+            <div class="row">
+              <div class="col">
+           
+                <label>Name </label>
+                <input type="text" name="client[contact]" >
+              </div>
+            </div>
+           <div class="row">
+              <div class="col">
+                <label>Email</label>
+                <input type="text" name="client[email]" >
+              </div>
+            </div>
+         <div class="row">
+              <div class="col">
+                <label>Number</label>
+                <input class="number-input" type="number" name="client[contact_number]">
+              </div>
+            </div>
+                 <div class="row">
+               <div class="col">
+                <label>Notes</label>
+                 <textarea name="client[notes]" ></textarea>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+    <!--  Form submit  -->
+      <div class="row form-section form-footer">
+        <div class="col form-submit">
+          <button class="submit-form-button">Save Client</button>
+      </div>
+      </form>
+        </div>
 
-    </form>
-  </div>
+
+
+
+
+
+
+
 </div>
 
 

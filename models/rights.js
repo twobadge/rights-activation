@@ -5,7 +5,8 @@ var rightSchema= new mongoose.Schema({
   category: String,
   description: String,
   attachments: String,
-  complete: String
+  opponent: String,
+  progress: String
 });
 
 // Create rights model to work with

@@ -83,7 +83,7 @@
       <!-- Objectives section -->
       <div class="row general-row client-about-row">
         <div class="col-xs-12">
-          <h4 class="heading-primary">OBJECTIVES</h4>
+          <h4 class="section-title">Objectives</h4> 
         </div>
         <div class="col-xs-12">
           <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -96,9 +96,9 @@
 
       <!-- Delivery section  -->
       <div class="row general-row client-about-row">
-        <div class="col-xs-12 col-lg-12 delivery-sect  ion">
+        <div class="col-xs-12 col-lg-12 delivery-secton">
           <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-           <h4 class="heading-primary">DELIVERY</h4></a>
+           <h4 class="section-title">Delivery</h4></a>
           <a href="/clients/<%= client._id %>/rights/new"><button class="dark-button move-right" >Add Right</button></a>
           <br>
           <br>
@@ -114,7 +114,7 @@
                       <td> <%= right.category %> </td>
                       <td> <%= right.description %></td>
                       <td> <%= right.attachments %></td>
-                      <td> <%= right.complete %></td>
+                      <td> <%= right.progress %></td>
                     </tr>
                     <% }) %>
                   </table>
@@ -123,7 +123,7 @@
 
       <!-- End delivery section -->
       <form action="/clients/<%= client._id %>?_method=DELETE" method="POST">
-        <div class="button-group"><button onclick="deleteWarning()" class="warning-button">Delete Client</button></div>
+        <div class="button-group"><button onclick="deleteWarning()" class="warning-button">Delete</button></div>
       </form>
     </div>
     <!-- End rights section -->

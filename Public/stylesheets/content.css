@@ -24,7 +24,7 @@ body {
 	font-weight: lighter;
 }
 
-input, p {
+input, p, h5 {
 	padding: 2px;
 	margin: 0px;
 }
@@ -52,17 +52,31 @@ li {
 
 .navbar {
 	padding:0px;
-	background-color: #212944 !important;
+	background-color: #33475b !important;
 	font-size: 1rem;
 	box-shadow: 0 0 10px grey;
 }
 
 .primary-navs {
 	color: #ffffff !important;
+	margin-left:10px;
+}
+
+.primary-navs:hover {
+	color:lightgrey!important;
 }
 
 .navbar-brand {
 	margin-left: 15px;
+	transition: 0.70s;
+  -webkit-transition: 0.70s;
+  -moz-transition: 0.70s;
+  -ms-transition: 0.70s;
+  -o-transition: 0.70s;
+}
+.navbar-brand:hover {
+	transition: 0.70s;
+	color:lightgrey!important;
 }
 
 .navbar-brand, .abs {
@@ -164,30 +178,119 @@ i {
 /* Stops inset border appearing on hover */
 #sign-in-button {
 	box-shadow: none !important;
+	color:#ffffff;
+	font-weight: 300;
+	margin-right: 25px;
+	font-size:0.9rem;
 }
 
+#sign-in-button:hover {
+	color:lightgrey;
+}
 
+.fa-arrow-right {
+	font-size:0.8rem;
+}
 
 .col {
 	text-align: left;
 }
 
-/* input styles */
-input, textarea {
-	outline: none;
-	width: 100%;
-	margin: 10px 10px 10px 0px;;
-	border: 0px solid #ededed;
-	background-color: hsl(220, 12%, 95%);
-	border-radius: 3px;
-	color: #3C3C3C;
-	padding: 5px;
-	/*  */
+/* form styles */
+
+input, textarea, select {
+  display:block;
+  margin:0rem 0rem 1rem 0rem;
+  background-color:#F5F8FA;
+  border-radius:3px;
+  outline:0;
+  border:1px solid lightgrey;
+  padding:5px;
+  width:100%;
+  color:#263443;
 }
+
+label {
+  margin-bottom:0px;
+  font-size:0.8rem;
+}
+
+input:hover {
+  box-shadow:inset 0px 0px 5px lightgrey;
+}
+
+.number-input {
+  width:40%;
+}
+
+.date-input {
+  width:80%;
+}
+.form-container {
+	margin-top:15px;
+	margin-bottom: 15px;
+	border-radius: 3px;
+	box-shadow: 0 1px 5px 0 rgba(45, 62, 80, .12);
+}
+
+.form-section {
+  border-bottom:1px solid #ededed;
+	padding:15px 15px 15px 15px;
+	background-color:#ffffff;
+}
+
+.form-description {
+  font-style:italic;
+  opacity:0.6;
+  font-size:0.8rem;
+}
+
+.form-header {
+	border-radius:3px 3px 0px 0px;
+}
+
+.form-footer {
+  background-color:#EEEFF1;
+}
+
+.form-section-title {
+	font-size:1rem;
+}
+
+.form-submit button {
+  float:right;
+  margin-left:5px;
+}
+
+.submit-form-button {
+  padding:7px 10px;
+  border-radius:4px;
+  background-color:#53A1DC;
+  color:#ffffff;
+  border:none;
+  outline:none!important;
+}
+
+.radio-buttons{
+	width:auto;
+  margin-right:5px;
+  margin-left:5px;
+  display:inline;
+	cursor:pointer;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+button:hover {
+  opacity:0.9;
+  cursor:pointer;
+}
+
 
 .search-bar {
 	background-color:#ffffff;
 	box-shadow: inset 0 -2px #aeaeae;
+	margin-top:10px;
 }
 
 ::placeholder {
@@ -213,8 +316,16 @@ input, textarea {
 	margin: 0px 0px 0px 0px;
 }
 
+.section-title {
+	font-size: 1rem;
+	font-weight: bold;
+	display: inline;
+	
+}
+
 .heading-primary {
 	display: inline;
+	letter-spacing: .5px;
 }
 
 .headline-values {
@@ -372,7 +483,7 @@ tr:hover {
 }
 
 td {
-	padding: 10px;
+	padding: 3px;
 }
 
 /* Buttons */
@@ -422,6 +533,7 @@ button:focus {
 	background-color:#900300;
 	color:#ffffff;
 	margin-top:10px;
+	padding:7px 10px;
 }
 
 .info-button {
@@ -467,7 +579,7 @@ button:focus {
 
 @media only screen and (max-width: 1024px) {
 
-	input,
+	.search-bar,
 	.vertical-nav-title {
 		display: none;
 	}
