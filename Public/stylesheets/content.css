@@ -2,7 +2,7 @@
 /* Colours
 Background-color: #F5F8FA;
 Font-color - Gunmetal #263443;
-Navs - Yankee Blue #212944;
+Navs - Yankee Blue #33475b;
 Primary - Charcoal #33475b;
 Lighter - Payne's grey #586878;
 Lightest - Mantee - #8F9AA5;
@@ -22,7 +22,9 @@ body {
 	background-color: #F5F8FA;
 	color: #263443;
 	font-weight: lighter;
+	min-height: 100vh!important;
 }
+
 
 input, p, h5 {
 	padding: 2px;
@@ -188,8 +190,8 @@ i {
 	color:lightgrey;
 }
 
-.fa-arrow-right {
-	font-size:0.8rem;
+.fa-arrow-right, .fa-plus-circle, .fa-question-circle {
+	font-size:0.9rem;
 }
 
 .col {
@@ -286,7 +288,6 @@ button:hover {
   cursor:pointer;
 }
 
-
 .search-bar {
 	background-color:#ffffff;
 	box-shadow: inset 0 -2px #aeaeae;
@@ -309,6 +310,30 @@ button:hover {
 	/* Microsoft Edge */
 	color: #aeaeae;
 	font-size: 12px;
+}
+
+/* popovers */
+.help-content {
+  display:none;
+  background-color:#ededed;
+  padding:5px;
+  margin-left:10px;
+	font-style:italic;
+	border-radius: 7px;
+}
+
+.help:hover {
+  color:#3c3c3c;
+  cursor:pointer;
+}
+
+.help {
+  display:inline;
+}
+
+.help:hover > .help-content {
+  display:inline;
+  position:absolute;
 }
 
 /* rights styles */
@@ -444,14 +469,6 @@ button:hover {
 	/* transform:scale(1.08); */
 }
 
-/* .client-card-square:hover:before{
-	content: '';
-	position:absolute;
-	top:100%;
-	width:100%;
-	height:2px;
-} */
-
 /* tables */
 
 /* A boostrap class which added unwanted margin*/
@@ -490,12 +507,16 @@ td {
 button {
 	border: none;
 	border-radius: 4px;
-	padding: 3px 10px;
+	padding:7px 10px;
 	/* box-shadow: 0px 1px 2px lightgrey; */
 	transition: transform .2s;
 	font-size: 0.9rem;
 	text-transform: uppercase;
 	/* font-weight: lighter; */
+}
+
+.button-small {
+	padding:5px 6px;
 }
 
 button:hover {
@@ -542,6 +563,36 @@ button:focus {
 
 .button-group {
 	float:right;
+}
+
+
+/* Footer */
+
+.container-fluid {
+  position: relative;
+  min-height: 100vh;
+  font-family:Roboto;
+  font-size:0.9rem;
+}
+
+#content-wrap {
+  padding-bottom: 5.5rem;    /* Footer height */
+}
+
+#footer {
+	
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+/*   height: 2.5rem;  */
+  text-align:center;
+  border-top: 1px solid lightgrey;
+  padding:5px;
+  color:lightgrey;
+  font-weight:300;
+  background-color:#33475b;
+  margin-left:-15px;
+  margin-right:-15px;
 }
 
 /* media queries */
