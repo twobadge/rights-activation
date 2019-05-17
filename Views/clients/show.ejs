@@ -9,18 +9,18 @@
       <input class="search-bar" id="partner-search" onkeyup="myFunction()" type="text" placeholder="Search..."
         name="search" title="Search for client">
       <ul id="myUL">
-        <li class="v-bar-link"> 
-        
+        <li class="v-bar-link">
+
         </li>
       </ul>
     </div>
     <div class="rights-section col-lg-10">
-        
+
       <div class="row general-row headline-values">
 
         <div class="col-lg-12 col-xs-12">
           <h3>
-              <%= client.name %>
+            <%= client.name %>
           </h3>
 
         </div>
@@ -84,7 +84,7 @@
       <!-- Objectives section -->
       <div class="row general-row client-about-row">
         <div class="col-xs-12">
-          <h4 class="section-title">Objectives</h4> 
+          <h4 class="heading-primary">OBJECTIVES</h4>
         </div>
         <div class="col-xs-12">
           <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -94,31 +94,115 @@
             mollit anim id est laborum."</p>
         </div>
       </div>
+      <!-- Performance section -->
+      <div class="row general-row client-about-row">
+        <div class="col">
+          <div class="row heading-container" style="margin-bottom:5px;">
+            <div class="col-12">
+              <h4 class="heading-primary">PERFORMANCE</h4>
+            </div>
+          </div>
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link metrics" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+                aria-controls="pills-contact" aria-selected="false">Facebook</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+           
+              <table id="data-table" class="table">
+                <thead>
+                  <tr>
+                    <td onclick="sortTable(0)">
+                      Channel <i class="fas fa-sort"></i>
+                    </td>
+                    <td>
+                      Name <i class="fas fa-sort"></i>
+                    </td>
+                    <td>
+                      Reach <i class="fas fa-sort"></i>
+                    </td>
+                    <td>
+                      Engagement <i class="fas fa-sort"></i>
+                    </td>
+                    <td>
+                      Reach <i class="fas fa-sort"></i>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      Instagram
+                    </td>
+                    <td>
+                      
+                    </td>
+                    <td>
+               
+                    </td>
+                    <td>
+                      Facebook
+                    </td>
+                    <td>
+                      3402
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Facebook
+                    </td>
+                    <td>
+                      3402
+                    </td>
+                    <td>
+                      9021
+                    </td>
+                    <td>
+                      Twitter
+                    </td>
+                    <td>
+                      3402
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        
+            </div>
+          </div>
 
+        </div>
+      </div>
       <!-- Delivery section  -->
       <div class="row general-row client-about-row">
         <div class="col-xs-12 col-lg-12 delivery-secton">
-          <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-           <h4 class="section-title">Delivery</h4></a>
-          <a href="/clients/<%= client._id %>/rights/new"><button class="dark-button move-right" >Add Right  <i class="fas fa-plus-circle"></i></button></a>
+          <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            <h4 class="heading-primary">DELIVERY</h4>
+          </a>
+          <a href="/clients/<%= client._id %>/rights/new"><button class="dark-button move-right">Add Right <i
+                class="fas fa-plus-circle"></i></button></a>
           <br>
           <br>
-              <table id="data-table" style="width:100%;">
-                    <tr>
-                      <td onclick="sortTable(0)">Category <i class="fas fa-sort"></i></td>
-                      <td>Detail</td>
-                      <td>Attachments</td>
-                      <td>Progress</td>
-                    </tr>
-                    <% client.rights.forEach(function(right){ %>
-                    <tr>
-                      <td> <%= right.category %> </td>
-                      <td> <%= right.description %></td>
-                      <td> <%= right.attachments %></td>
-                      <td> <%= right.progress %></td>
-                    </tr>
-                    <% }) %>
-                  </table>
+          <table id="data-table" style="width:100%;">
+
+            <tr>
+              <td onclick="sortTable(0)">Category <i class="fas fa-sort"></i></td>
+              <td>Detail</td>
+              <td>Attachments</td>
+              <td>Progress</td>
+            </tr>
+
+            <% client.rights.forEach(function(right){ %>
+            <tr>
+              <td> <%= right.category %> </td>
+              <td> <%= right.description %></td>
+              <td> <%= right.attachments %></td>
+              <td> <%= right.progress %></td>
+            </tr>
+            <% }) %>
+          </table>
         </div>
       </div>
 
@@ -127,8 +211,8 @@
         <div class="button-group"><button onclick="deleteWarning()" class="warning-button">Delete</button></div>
       </form>
     </div>
-    </div>
-    
-    <!-- End rights section -->
+  </div>
 
-<% include ../partials/footer %>
+  <!-- End rights section -->
+
+  <% include ../partials/footer %>

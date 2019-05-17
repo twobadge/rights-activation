@@ -6,6 +6,7 @@ var express = require('express'),
   ejs = require('ejs');
   Client = require("./models/clients"),
   Right = require("./models/rights");
+  Social = require("./models/social") 
 
 // set the relevant view engine
 app.set("view engine", "ejs");
@@ -19,6 +20,24 @@ app.use(methodOverride("_method"));
 mongoose.connect('mongodb://localhost:27017/rights_activation', {
   useNewUrlParser: true
 });
+
+
+// Client.findOne({name:"Capital Insurance"}, function(err, client){
+//   if(err){
+//   console.log(err);
+//   } else {
+//     client.rights.push({
+//       category: "Digital"
+//     });
+//     client.save(function(err, client){
+//       if(err){
+//         console.log(err);
+//       } else {
+//         console.log(client);
+//       }
+//     });
+//   }
+// });
 
 //Routes
 app.get("/", function (req, res) {

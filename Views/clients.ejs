@@ -5,14 +5,14 @@
   <div class="row general-row headline-values">
     <div class="col">
       <h3 style="display:inline;padding-left:10px;">Overview</h3>
-      <a title="add new client" href="/clients/new"><button class="submit-form-button move-right">NEW CLIENT <i class="fas fa-plus-circle"></i></button></a>
+      <a title="add new client" href="/clients/new"><button class="dark-button move-right">NEW CLIENT <i class="fas fa-plus-circle"></i></button></a>
     </div>
   </div>
   <div class="row general-row">
     <% clients.forEach(function(client){ %>
   
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-        <a target="_blank" class="client-card-link" href="/clients/<%= client._id %>">
+        <a class="client-card-link" href="/clients/<%= client._id %>">
       <div class="client-card-square">
         <div class="row general-row">
           <div class="col-2 client-card-image">

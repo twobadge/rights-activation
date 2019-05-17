@@ -16,6 +16,12 @@ var clientSchema= new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "Right"
     }
+  ],
+  socials: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Social"
+    }
   ]
 });
 
@@ -24,10 +30,8 @@ var Client = mongoose.model('Client', clientSchema);
 
 
 
-
 //Export model
 module.exports = mongoose.model("Client", clientSchema);
-
 
 
 
@@ -72,20 +76,4 @@ module.exports = mongoose.model("Client", clientSchema);
 
 
 
-// Client.findOne({name:"Thomas"}, function(err, client){
-//   if(err){
-//   console.log(err);
-//   } else {
-//     client.rights.push({
-//       priority: 7,
-//       description: "Winter campaign 2020"
-//     });
-//     client.save(function(err, client){
-//       if(err){
-//         console.log(err);
-//       } else {
-//         console.log(client);
-//       }
-//     })
-//   }
-// });
+

@@ -1,6 +1,6 @@
 var mongoose = require ("mongoose");
 
-var rightSchema= new mongoose.Schema({
+var rightSchema = new mongoose.Schema({
   priority: Number,
   category: String,
   description: String,
@@ -26,9 +26,9 @@ module.exports = mongoose.model("Right", rightSchema);
 
 //Pushing rights to clients and saving
 
-// newClient.rights.push({
+// newClient.socials.push({
 //   priority: 900,
-//   description:"Really important information"
+//   fbreach:"Really important information"
 // });
 
 // newClient.save(function(err, client){
