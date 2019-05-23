@@ -21,24 +21,6 @@ mongoose.connect('mongodb://localhost:27017/rights_activation', {
   useNewUrlParser: true
 });
 
-
-// Client.findOne({name:"Capital Insurance"}, function(err, client){
-//   if(err){
-//   console.log(err);
-//   } else {
-//     client.rights.push({
-//       category: "Digital"
-//     });
-//     client.save(function(err, client){
-//       if(err){
-//         console.log(err);
-//       } else {
-//         console.log(client);
-//       }
-//     });
-//   }
-// });
-
 //Routes
 app.get("/", function (req, res) {
   res.redirect("/clients");
@@ -125,7 +107,7 @@ app.delete("/clients/:id", function (req, res) {
 });
 
 // =================================
-// Comment routes
+// Rights routes
 // =================================
 
 //rights index
@@ -178,6 +160,9 @@ app.post("/clients/:id/rights", function (req, res) {
 });
 
 //Edit rights
+
+
+
 
 
 

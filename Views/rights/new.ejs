@@ -1,89 +1,89 @@
 <% include ../partials/header %>
 
 <div class="container form-container">
-    <form action="/clients/<%= client._id %>/rights" method="POST">
-  <div class="row form-section">
-    <div class="col-12">
-      <h5>Create Right For <%= client.name %></h5>
+  <form action="/clients/<%= client._id %>/rights" method="POST">
+    <div class="row form-section">
+      <div class="col-12">
+        <h5>Create Right For <%= client.name %></h5>
+      </div>
     </div>
-  </div>
-  <!--  Rights Details  -->
-  <div class="row form-section">
-    <div class="col-4">
-      <p class="form-section-title">Rights Information</p>
-      <p class="form-description">Enter all information relating to the contract here</p>
-    </div>
-    <div class="col-8">
-      <div class="row">
-        <div class="col">
-          <label>Right Category </label><br>
-          <select name="right[category]">
-            <option value="No Cat Selected">- No Category Selected -</option>
-            <option value="Digital">Digital</option>
-            <option value="Stadium Branding">Stadium Branding</option>
-            <option value="Kit Branding">Kit Branding</option>
-            <option value="Events">Events</option>
-            <option value="Programmes">Programmes</option>
-            <option value="Player">Player</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
+    <!--  Rights Details  -->
+    <div class="row form-section">
+      <div class="col-4">
+        <p class="form-section-title">Rights Information</p>
+        <p class="form-description">Enter all information relating to the contract here</p>
       </div>
-      <div class="row">
-        <div class="col">
-          <label>Detail</label>
-          <textarea name="right[description]"></textarea>
+      <div class="col-8">
+        <div class="row">
+          <div class="col">
+            <label>Right Category </label><br>
+            <select name="right[category]">
+              <option value="No Cat Selected">- No Category Selected -</option>
+              <option value="Digital">Digital</option>
+              <option value="Stadium Branding">Stadium Branding</option>
+              <option value="Kit Branding">Kit Branding</option>
+              <option value="Events">Events</option>
+              <option value="Programmes">Programmes</option>
+              <option value="Player">Player</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <label>Opponent</label><br>
-          <select name="right[opponent]">
-            <option value="No Cat Selected">- No Opponent Selected -</option>
-            <option value="Full Season">Full Season</option>
-            <option value="Saracens">Saracens</option>
-            <option value="Exeter">Exeter</option>
-            <option value="Gloucester">Gloucester</option>
-            <option value="Northampton">Northampton</option>
-            <option value="Gloucester">Gloucester</option>
-            <option value="Bath">Bath</option>
-            <option value="Wasps">Wasps</option>
-            <option value="Bristol">Bristol</option>
-            <option value="Worcester">Worcester</option>
-            <option value="Leicester">Leicester</option>
-            <option value="London Irish">London Irish</option>
-            <option value="Newcastle">Newcastle</option>
-          </select>
+        <div class="row">
+          <div class="col">
+            <label>Detail</label>
+            <textarea name="right[description]"></textarea>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <label>Due Date</label>
-          <input class="date-input" type="date">
+        <div class="row">
+          <div class="col">
+            <label>Opponent</label><br>
+            <select name="right[opponent]">
+              <option value="No Cat Selected">- No Opponent Selected -</option>
+              <option value="Full Season">Full Season</option>
+              <option value="Saracens">Saracens</option>
+              <option value="Exeter">Exeter</option>
+              <option value="Gloucester">Gloucester</option>
+              <option value="Northampton">Northampton</option>
+              <option value="Gloucester">Gloucester</option>
+              <option value="Bath">Bath</option>
+              <option value="Wasps">Wasps</option>
+              <option value="Bristol">Bristol</option>
+              <option value="Worcester">Worcester</option>
+              <option value="Leicester">Leicester</option>
+              <option value="London Irish">London Irish</option>
+              <option value="Newcastle">Newcastle</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <label>Progress</label><br>
-          <input class="radio-buttons" type="radio" id="contactChoice1" name="right[progress]" value="Not Started">
-          <label for="contactChoice1">Not Started</label>
+        <div class="row">
+          <div class="col">
+            <label>Due Date</label>
+            <input class="date-input" type="date">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>Progress</label><br>
+            <input class="radio-buttons" type="radio" id="contactChoice1" name="right[progress]" value="Not Started">
+            <label for="contactChoice1">Not Started</label>
 
-          <input class="radio-buttons" type="radio" id="contactChoice2" name="right[progress]" value="In Progress">
-          <label for="contactChoice2">In Progress</label>
+            <input class="radio-buttons" type="radio" id="contactChoice2" name="right[progress]" value="In Progress">
+            <label for="contactChoice2">In Progress</label>
 
-          <input type="radio" id="contactChoice3" name="right[progress]" class="radio-buttons" value="Complete">
-          <label for="contactChoice3">Complete</label>
+            <input type="radio" id="contactChoice3" name="right[progress]" class="radio-buttons" value="Complete">
+            <label for="contactChoice3">Complete</label>
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-  <!--  Form submit  -->
-  <div class="row form-section form-footer">
-    <div class="col form-submit">
-      <button class="submit-form-button">Save</button>
+    <!--  Form submit  -->
+    <div class="row form-section form-footer">
+      <div class="col form-submit">
+        <button class="submit-form-button">Save</button>
+      </div>
     </div>
-  </div>
   </form>
 </div>
 
