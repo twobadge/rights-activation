@@ -488,8 +488,8 @@ table {
 }
 
 thead {
-	background-color: #263443;
-	color: #ffffff;
+	background-color: #F5F8FA;
+	/* color: #ffffff; */
 	cursor: pointer;
 }
 
@@ -501,9 +501,22 @@ tr {
 	border-top:1px solid #ededed;
 }
 
+.performance-table tr {
+	border:none;
+	text-align: left;
+	
+}
+.performance-table td {
+	border:none;
+	padding:3px;
+	padding-bottom: 0px;
+	font-size:0.8rem;
+}
+
 
 td {
 	padding: 3px;
+	border:none!important;
 }
 
 /* Buttons */
@@ -511,10 +524,11 @@ button {
 	border: none;
 	border-radius: 4px;
 	padding:3px 7px;
+	background-color:#F5F8FA;
 	/* box-shadow: 0px 1px 2px lightgrey; */
 	transition: transform .2s;
 	font-size: 0.9rem;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	/* font-weight: lighter; */
 }
 
@@ -523,10 +537,7 @@ button {
 }
 
 button:hover {
-	/* transform: scale(1.02); */
-	transform: translate(0, -2px);
-	/* box-shadow: 3px 3px 2px lightgrey; */
-	
+	opacity:0.8;
 }
 
 .fa-plus-circle:hover {
@@ -548,16 +559,28 @@ button:focus {
 }
 
 .dark-button {
-	color:#ffffff;
 	background-color: #263443;
 	margin-right: 5px;
+	color:#ffffff;
 }
+ .dark-button:hover {
+	background-color: #263443;
+	color:#ffffff;
+	opacity:0.8;
+ }
 
 .warning-button {
-	background-color:#900300;
-	color:#ffffff;
+	background-color: #F5F8FA;
+	color:#900300;
 	margin-top:10px;
 	padding:7px 10px;
+	border:1px solid #900300;
+}
+
+.warning-button:hover {
+	background-color:#900300;
+	/* opacity: 0.8; */
+	color:#ffffff;
 }
 
 .info-button {
