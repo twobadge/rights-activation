@@ -17,10 +17,10 @@ var clientSchema= new mongoose.Schema({
       ref: "Right"
     }
   ],
-  socials: [
+  performances: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Social"
+      ref: "Performance"
     }
   ]
 });

@@ -100,6 +100,8 @@
           <div class="row heading-container" style="margin-bottom:5px;">
             <div class="col-12">
               <h4 class="heading-primary">PERFORMANCE</h4>
+              <a href="/clients/<%= client._id %>/performance/new"><button class="dark-button move-right">Add Campaign
+                  Data <i class="fas fa-plus-circle"></i></button></a>
             </div>
           </div>
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -109,16 +111,14 @@
             </li>
           </ul>
           <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-           
+            <div class="tab-pane fade show active" id="pills-contact" role="tabpanel"
+              aria-labelledby="pills-contact-tab">
+
               <table id="data-table" class="table">
                 <thead>
                   <tr>
                     <td onclick="sortTable(0)">
-                      Channel <i class="fas fa-sort"></i>
-                    </td>
-                    <td>
-                      Name <i class="fas fa-sort"></i>
+                      Campaign <i class="fas fa-sort"></i>
                     </td>
                     <td>
                       Reach <i class="fas fa-sort"></i>
@@ -127,48 +127,30 @@
                       Engagement <i class="fas fa-sort"></i>
                     </td>
                     <td>
-                      Reach <i class="fas fa-sort"></i>
+                      Clicks <i class="fas fa-sort"></i>
                     </td>
                   </tr>
                 </thead>
+
+                <% client.performances.forEach(function(performance){ %>
                 <tbody>
                   <tr>
                     <td>
-                      Instagram
+                      <%= performance.campaign %>
                     </td>
                     <td>
-                      
+                      <%= performance.fb_reach %>
                     </td>
                     <td>
-               
+                      <%= performance.fb_engagement %>
                     </td>
                     <td>
-                      Facebook
-                    </td>
-                    <td>
-                      3402
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Facebook
-                    </td>
-                    <td>
-                      3402
-                    </td>
-                    <td>
-                      9021
-                    </td>
-                    <td>
-                      Twitter
-                    </td>
-                    <td>
-                      3402
+                      <%= performance.fb_clicks %>
                     </td>
                   </tr>
                 </tbody>
+                <% }) %>
               </table>
-        
             </div>
           </div>
 

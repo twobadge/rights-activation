@@ -1,12 +1,13 @@
 var mongoose = require ("mongoose");
 
 var rightSchema = new mongoose.Schema({
+  campaign: String,
   priority: Number,
   category: String,
   description: String,
   attachments: String,
   opponent: String,
-  progress: String
+  progress: String,
 });
 
 // Create rights model to work with

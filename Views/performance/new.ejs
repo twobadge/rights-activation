@@ -1,0 +1,96 @@
+<% include ../partials/header %>
+
+<div class="container form-container">
+  <form action="/clients/<%= client._id %>/performance" method="POST">
+    <div class="row form-section">
+      <div class="col-12">
+        <h5>Add performance data for <%= client.name %></h5>
+      </div>
+    </div>
+    <!-- Campaign metadata -->
+    <div class="row form-section">
+        <div class="col-3">
+          <p class="form-section-title">Campaign Details</p>
+          
+        </div>
+        <div class="col-9">
+          <div class="row">
+            <div class="col">
+              <label>Campaign Name </label>
+              <input type="string" name="performance[campaign]">
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--  Facebook Data  -->
+    <div class="row form-section">
+      <div class="col-3">
+        <p class="form-section-title">Facebook Analytics</p>
+        <p class="form-description">Enter all Facebook data here</p>
+      </div>
+      <div class="col-9">
+        <div class="row">
+          <div class="col">
+            <table class="table performance-table">
+              
+              <tr>
+                <td> Posts</td>
+                <td> Reach</td>
+                <td> Engagement</td>
+                <td> Clicks</td>
+              </tr>
+              
+              <tr>
+                <td><input type="number" name="performance[fb_posts]"> </td>
+                <td><input type="number" name="performance[fb_reach]"> </td>
+                <td><input type="number" name="performance[fb_engagement]"> </td>
+                <td><input type="number" name="performance[fb_clicks]"> </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+        <!--  Twitter Analytics  -->
+        <div class="row form-section">
+            <div class="col-3">
+              <p class="form-section-title">Twitter Analytics</p>
+              <p class="form-description">Enter all Tweet data here</p>
+            </div>
+            <div class="col-9">
+              <div class="row">
+                <div class="col">
+                  <table class="table performance-table">
+                    
+                    <tr>
+                      <td> Tweets</td>
+                      <td> Impressions</td>
+                      <td> Engagement</td>
+                      <td> Clicks</td>
+                    </tr>
+                    
+                    <tr>
+                      <td><input type="number" name="performance[tw_tweets]"> </td>
+                      <td><input type="number" name="performance[tw_impressions]"> </td>
+                      <td><input type="number" name="performance[tw_engagement]"> </td>
+                      <td><input type="number" name="performance[tw_clicks]"> </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+
+    <!--  Form submit  -->
+    <div class="row form-section form-footer">
+      <div class="col form-submit">
+        <button class="submit-form-button">Save</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<% include ../partials/footer %>

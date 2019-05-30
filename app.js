@@ -6,7 +6,7 @@ var express = require('express'),
   ejs = require('ejs');
   Client = require("./models/clients"),
   Right = require("./models/rights");
-  Social = require("./models/social") 
+  Performance = require("./models/performance") 
 
 // set the relevant view engine
 app.set("view engine", "ejs");
@@ -163,7 +163,56 @@ app.post("/clients/:id/rights", function (req, res) {
 
 
 
+// =================================
+// Performance routes
+// =================================
 
+//performance index
+app.get("/performance", function (req, res) {
+  Performance.find({}, function (err, performances) {
+    if (err) {
+      console.log("Error");
+    } else {
+      res.render("performance/performance", {
+        performances: performances
+      });
+    }
+  });
+});
+
+//new
+app.get("/clients/:id/performance/new", function (req, res) {
+  //find client by id 
+  Client.findById(req.params.id, function (err, client) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("performance/new", {
+        client: client
+      });
+    }
+  });
+});
+
+// post performance
+app.post("/clients/:id/performance", function (req, res) {
+  Client.findById(req.params.id, function (err, client) {
+    if (err) {
+      console.log(err);
+      res.redirect("/clients");
+    } else {
+      Performance.create(req.body.performance, function (err, performance) {
+        if (err) {
+          console.log(err);
+        } else {
+          client.performances.push(performance);
+          client.save();
+          res.redirect("/clients/" + client._id);
+        }
+      });
+    }
+  });
+});
 
 
 
