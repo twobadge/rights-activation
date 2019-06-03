@@ -62,7 +62,7 @@ app.get("/clients/:id", function (req, res) {
     if (err) {
       res.redirect("/clients");
     } else {
-      console.log(foundClient);
+      // console.log(foundClient);
       res.render("./clients/show", {
         client: foundClient
       });
@@ -213,6 +213,9 @@ app.post("/clients/:id/performance", function (req, res) {
     }
   });
 });
+
+
+
 
 
 

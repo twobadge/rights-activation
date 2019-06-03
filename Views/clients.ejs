@@ -25,7 +25,7 @@
         <div class="row general-row client-card-details">
           <div class="col">
             <p> <span class="value-description"> Value</span> £<%= client.value %></p>
-            <p><span class="value-description"> Start:</span> 01/01/2019   <span class="value-description"> |   Expiry: </span> 01/01/2020 </p>
+            <p><span class="value-description"> Start:</span> <%= client.start_date.toLocaleDateString('en-GB') %> <span class="value-description"> |   Expiry: </span><%= client.end_date.toLocaleDateString('en-GB') %> </p>
              
           </div>
         </div>
@@ -39,6 +39,7 @@
       </a>
     </div>
     <% }) %>
+
   </div>
 
 

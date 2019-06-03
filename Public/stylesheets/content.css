@@ -194,6 +194,10 @@ i {
 	font-size:0.8rem;
 }
 
+.fa-print {
+	font-size:1.2rem;
+}
+
 .col {
 	text-align: left;
 }
@@ -449,7 +453,6 @@ button:hover {
 }
 
 .client-card-logo {
-	
 	max-width: 100%;
 	margin-right:5px;
 	display: flex-inline;
@@ -530,6 +533,11 @@ button {
 	font-size: 0.9rem;
 	/* text-transform: uppercase; */
 	/* font-weight: lighter; */
+}
+
+.print-button {
+	margin:0px;
+	padding:0px;
 }
 
 .button-small {
@@ -674,5 +682,25 @@ button:focus {
 @media only screen and (max-width: 1023px) {
 	.navbar {
 		padding: 3px 3px 3px 0px !important
+	}
+}
+
+/* Print styles */
+
+@media print {
+	.vertical-nav, button, .digital-only {
+		display:none;
+	}
+}
+
+
+@media print {
+	.rights-section {
+		margin:auto;
+		margin-top:10px;
+		border:1px solid lightgrey;
+		border-radius:4px;
+		padding:20px;
+		font-size:16px;
 	}
 }

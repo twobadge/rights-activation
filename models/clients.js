@@ -25,6 +25,10 @@ var clientSchema= new mongoose.Schema({
   ]
 });
 
+//Convert Dates
+var date = new Date();
+date.toDateString();
+
 //Client model
 var Client = mongoose.model('Client', clientSchema);
 
@@ -35,11 +39,11 @@ module.exports = mongoose.model("Client", clientSchema);
 
 
 
-//Create and save client
+// Create and save client
 // Client.create({
-//   name:"Better Insurance",
+//   name:"Even Better Insurance",
 //   designation:"Principal Partner",
-//   value: 999999
+//   start_date: '2019-08-12'
 // }, function(err, client){
 //   if(err){
 //     console.log("didn't work");
@@ -49,9 +53,6 @@ module.exports = mongoose.model("Client", clientSchema);
 //     console.log(client)
 //   }
 // });
-
-
-
 
 // Find a client 
 // Client.find({}, function(err, clients){
