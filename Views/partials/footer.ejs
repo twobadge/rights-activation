@@ -1,6 +1,6 @@
 </div>
-<footer id="footer">&copy; Rights Activation - Created by
-    <span style="font-weight:bold;">H</span>annington</footer>
+<footer id="footer">&copy; Rights Activation
+</footer>
 </div>
 
 
@@ -63,30 +63,30 @@
     }
   }
 
-//Print
-function printFunction(){
-  window.print();
-}
+  //Print
+  function printFunction() {
+    window.print();
+  }
 
   //Search rights table 
   function searchrights() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("rights_search");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("rightsTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("rights_search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("rightsTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
       }
-    }       
+    }
   }
-}
 </script>
 
 <script src="./appFunctions.js"></script>

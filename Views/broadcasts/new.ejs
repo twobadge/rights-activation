@@ -1,0 +1,69 @@
+<% include ../partials/header %>
+
+<div class="container form-container">
+  <form action="/clients/<%= client._id %>/broadcasts" method="POST">
+    <div class="row form-section">
+      <div class="col-12">
+        <h5>Add Broadcast Data For <%= client.name %> </h5>
+      </div>
+    </div>
+    <!-- Campaign metadata -->
+    <div class="row form-section">
+      <div class="col-3">
+        <p class="form-section-title">Asset Details</p>
+        <p class="form-description">Enter the clients owned assets here. Typical Assets: Advertising board, Jersey Chest, Shorts...</p>
+      </div>
+
+      <div class="col-9">
+        <div class="row">
+          <div class="col">
+            <label>Asset Name </label>
+            <input type="string" name="broadcast[asset_name]"> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  TV Data  -->
+    <div class="row form-section">
+      <div class="col-3">
+        <p class="form-section-title">Television Data</p>
+        <p class="form-description">Enter all Nielsen data here</p>
+      </div>
+      <div class="col-9">
+        <div class="row">
+          <div class="col">
+            <table class="table performance-table">
+
+              <tr>
+                <td> Exposures</td>
+                <td> Duration</td>
+                <td> Media Value</td>
+                <td> QI Value</td>
+              </tr>
+
+              <tr>
+                <td><input type="number" value="0" name="broadcast[exposures]"> </td>
+                <td><input type="number" value="0" name="broadcast[duration]"> </td>
+                <td><input type="number" value="0" name="broadcast[me_value]"> </td>
+                <td><input type="number" value="0" name="broadcast[qi_value]"> </td>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--  Form submit  -->
+    <div class="row form-section form-footer">
+      <div class="col form-submit">
+        <button class="submit-form-button">Save</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<% include ../partials/footer %>

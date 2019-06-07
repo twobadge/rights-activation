@@ -8,14 +8,7 @@ var rightSchema = new mongoose.Schema({
   attachments: String,
   opponent: String,
   progress: String,
-  fb_reach: Number,
-  fb_engagement: Number,
-  fb_clicks: Number,
-  fb_posts: Number,
-  tw_tweets: Number,
-  tw_impressions: Number,
-  tw_engagement: Number,
-  tw_clicks: Number
+
 });
 
 // Create rights model to work with

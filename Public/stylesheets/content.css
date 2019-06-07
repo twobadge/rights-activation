@@ -44,7 +44,7 @@ ul, li {
 	list-style-type: none;
 	text-align: left;
 	padding: 0px;
-	margin-top: px;
+	margin: 0px;
 }
 
 li {
@@ -54,7 +54,7 @@ li {
 
 .navbar {
 	padding:0px;
-	background-color: #33475b !important;
+	background-color: #212944 !important;
 	font-size: 1rem;
 	box-shadow: 0 0 10px grey;
 }
@@ -82,7 +82,7 @@ li {
 }
 
 .navbar-brand, .abs {
-	font-weight: 300;
+	font-weight: 200!important;
 }
 
 .navbar-nav {
@@ -291,6 +291,9 @@ button:hover {
   opacity:0.9;
   cursor:pointer;
 }
+button:hover > .fa-plus-circle {
+  color:#FACF71;
+}
 
 .search-bar {
 	background-image:url("public/Assets/search_icon.svg");
@@ -344,6 +347,35 @@ button:hover {
 .help:hover > .help-content {
   display:inline;
   position:absolute;
+}
+
+
+/* Dropdown styles */
+
+.dropdown-data {
+  display:none;
+  background-color:#ffffff;
+	box-shadow: inset 0px 0px 2px #ededed;
+}
+
+.dropdown-list {
+	cursor:pointer;
+	margin-right: 20px;
+}
+
+.dropdown-list:hover {
+	background-color:#F5F8FA;
+}
+
+.dropdown-list:hover > .dropdown-data {
+	display:block;
+	position: absolute;
+}
+.drop-item {
+	padding:5px;
+}
+.drop-item:hover {
+	background-color:#F5F8FA;
 }
 
 /* rights styles */
@@ -490,6 +522,10 @@ table {
 	margin: 0px 0px 0px 0px;
 }
 
+table td {
+	padding:0.5rem!important;
+}
+
 thead {
 	background-color: #F5F8FA;
 	/* color: #ffffff; */
@@ -501,7 +537,7 @@ thead {
 } */
 
 tr {
-	border-top:1px solid #ededed;
+	border-top:0.5px solid #ededed;
 }
 
 .performance-table tr {
@@ -511,14 +547,13 @@ tr {
 }
 .performance-table td {
 	border:none;
-	padding:3px;
+	/* padding:3px; */
 	padding-bottom: 0px;
 	font-size:0.8rem;
 }
 
 
 td {
-	padding: 3px;
 	border:none!important;
 }
 
@@ -564,6 +599,12 @@ button:focus {
 	color: #263443;
 	background-color:#F5F8FA;
 	margin-right: 10px;
+}
+
+.dark-button-transparent {
+	background-color: #ffffff;
+	color:#263443;
+	/* border:1px solid #263443; */
 }
 
 .dark-button {
@@ -624,7 +665,7 @@ button:focus {
   padding:5px;
   color:lightgrey;
   font-weight:300;
-  background-color:#33475b;
+  background-color:#212944;
   margin-left:-15px;
   margin-right:-15px;
 }

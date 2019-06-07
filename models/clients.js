@@ -17,17 +17,19 @@ var clientSchema= new mongoose.Schema({
       ref: "Right"
     }
   ],
-  performances: [
+  broadcasts: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Performance"
+      ref: "Broadcast"
+    }
+  ],
+  socials: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Social"
     }
   ]
 });
-
-//Convert Dates
-var date = new Date();
-date.toDateString();
 
 //Client model
 var Client = mongoose.model('Client', clientSchema);

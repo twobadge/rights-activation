@@ -5,8 +5,9 @@ var express = require('express'),
   mongoose = require('mongoose'),
   ejs = require('ejs');
   Client = require("./models/clients"),
-  Right = require("./models/rights");
-  Performance = require("./models/performance") 
+  Right = require("./models/rights"),
+  Broadcast = require("./models/broadcast"),
+  Social = require("./models/social") 
 
 // set the relevant view engine
 app.set("view engine", "ejs");
@@ -25,6 +26,10 @@ mongoose.connect('mongodb://localhost:27017/rights_activation', {
 app.get("/", function (req, res) {
   res.redirect("/clients");
 })
+
+// =================================
+// Client routes
+// =================================s
 
 //Index
 app.get("/clients", function (req, res) {
@@ -58,8 +63,9 @@ app.post("/clients", function (req, res) {
 
 //Show route
 app.get("/clients/:id", function (req, res) {
-  Client.findById(req.params.id).populate("rights").exec(function (err, foundClient) {
+  Client.findById(req.params.id).populate("rights").populate("broadcasts").populate("socials").exec(function (err, foundClient){
     if (err) {
+      console.log(err);
       res.redirect("/clients");
     } else {
       // console.log(foundClient);
@@ -164,48 +170,48 @@ app.post("/clients/:id/rights", function (req, res) {
 
 
 // =================================
-// Performance routes
+// Broadcast routes
 // =================================
 
-//performance index
-app.get("/performance", function (req, res) {
-  Performance.find({}, function (err, performances) {
+//Broadcast index
+app.get("/broadcasts", function (req, res) {
+  Broadcast.find({}, function (err, broadcasts) {
     if (err) {
       console.log("Error");
     } else {
-      res.render("performance/performance", {
-        performances: performances
+      res.render("broadcasts/broadcasts", {
+        broadcast: broadcasts
       });
     }
   });
 });
 
-//new
-app.get("/clients/:id/performance/new", function (req, res) {
+//new broadcast route
+app.get("/clients/:id/broadcasts/new", function (req, res) {
   //find client by id 
   Client.findById(req.params.id, function (err, client) {
     if (err) {
       console.log(err);
     } else {
-      res.render("performance/new", {
+      res.render("broadcasts/new", {
         client: client
       });
     }
   });
 });
 
-// post performance
-app.post("/clients/:id/performance", function (req, res) {
+// post broadcasts
+app.post("/clients/:id/broadcasts", function (req, res) {
   Client.findById(req.params.id, function (err, client) {
     if (err) {
       console.log(err);
       res.redirect("/clients");
     } else {
-      Performance.create(req.body.performance, function (err, performance) {
+      Broadcast.create(req.body.broadcast, function (err, broadcast) {
         if (err) {
           console.log(err);
         } else {
-          client.performances.push(performance);
+          client.broadcasts.push(broadcast);
           client.save();
           res.redirect("/clients/" + client._id);
         }
@@ -215,8 +221,56 @@ app.post("/clients/:id/performance", function (req, res) {
 });
 
 
+// =================================
+// Socials routes
+// =================================
 
+//Broadcast index
+app.get("/socials", function (req, res) {
+  Social.find({}, function (err, socials) {
+    if (err) {
+      console.log("Error");
+    } else {
+      res.render("socials/socials", {
+        social: social
+      });
+    }
+  });
+});
 
+//new social data
+app.get("/clients/:id/socials/new", function (req, res) {
+  //find client by id 
+  Client.findById(req.params.id, function (err, client) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("socials/new", {
+        client: client
+      });
+    }
+  });
+});
+
+// post social data
+app.post("/clients/:id/socials", function (req, res) {
+  Client.findById(req.params.id, function (err, client) {
+    if (err) {
+      console.log(err);
+      res.redirect("/clients");
+    } else {
+      Social.create(req.body.social, function (err, social) {
+        if (err) {
+          console.log(err);
+        } else {
+          client.socials.push(social);
+          client.save();
+          res.redirect("/clients/" + client._id);
+        }
+      });
+    }
+  });
+});
 
 
 app.listen(3000)

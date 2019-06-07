@@ -2,34 +2,34 @@
 
 <div class="container">
   <div class="client-about-row">
-    <h2>All Client Reports</h2>
+    <h2>Broadcast Values</h2>
     <input type="text" style="width:95%;display:inline" class="search-bar" id="rights_search" onkeyup="searchrights()"
       placeholder="Search rights by category..." title="Search rights">
     <div class="help">
       <i class="fas fa-question-circle"></i><span class="help-content">
 
-        This search uses the detail column. Try and enter your rights using keywords to help group them</span>
+        This search uses the detail column. Try and enter your socials using keywords to help group them</span>
 
     </div>
     <table id="rightsTable" style="width:100%;">
       <tr>
-        <td>Campaign </td>
-        <td>Posts</td>
-        <td>Reach</td>
-        <td>Engagement</td>
-        <td>Clicks</td>
+        <td>Asset Name </td>
+        <td>Duration</td>
+        <td>Exposures</td>
+        <td>Media Value</td>
+        <td>QI Value</td>
       </tr>
-      <% performances.forEach(function(performance){ %>
+      <% broadcasts.forEach(function(broadcast){ %>
       <tr>
-        <td> <%= performance.campaign %> </td>
+        <td> <%= broadcast.asset_name %> </td>
 
-        <td> <%= performance.fb_posts %> </td>
+        <td> <%= broadcast.exposures %> </td>
 
-        <td> <%= performance.fb_reach %> </td>
+        <td> <%= broadcast.duration%> </td>
 
-        <td> <%= performance.fb_engagement %> </td>
+        <td> <%= broadcast.me_value %> </td>
 
-        <td> <%= performance.fb_clicks %> </td>
+        <td> <%= broadcast.qi_value %> </td>
       </tr>
       <% }) %>
     </table>

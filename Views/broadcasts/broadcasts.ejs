@@ -1,0 +1,43 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <div class="client-about-row">
+    <h2>Broadcast Values</h2>
+    <input type="text" style="width:95%;display:inline" class="search-bar" id="rights_search" onkeyup="searchrights()"
+      placeholder="Search rights by category..." title="Search rights">
+    <div class="help">
+      <i class="fas fa-question-circle"></i><span class="help-content">
+
+        This search uses the detail column. Try and enter your rights using keywords to help group them</span>
+
+    </div>
+    <table id="rightsTable" style="width:100%;">
+      <tr>
+        <td>Asset Name </td>
+        <td>Duration</td>
+        <td>Exposures</td>
+        <td>Media Value</td>
+        <td>QI Value</td>
+      </tr>
+      <% broadcasts.forEach(function(broadcast){ %>
+      <tr>
+        <td> <%= broadcast.asset_name %> </td>
+
+        <td> <%= broadcast.exposures %> </td>
+
+        <td> <%= broadcast.duration%> </td>
+
+        <td> <%= broadcast.me_value %> </td>
+
+        <td> <%= broadcast.qi_value %> </td>
+      </tr>
+      <% }) %>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+<% include ../partials/footer %>
