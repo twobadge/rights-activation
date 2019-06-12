@@ -8,7 +8,7 @@ var rightSchema = new mongoose.Schema({
   attachments: String,
   opponent: String,
   progress: String,
-
+  due_date: Date
 });
 
 // Create rights model to work with

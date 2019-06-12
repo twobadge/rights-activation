@@ -69,7 +69,7 @@
             </div>
           </div>
           <div class="col-xs-6 key-values">
-            <span class="value-description">Print</span> <br />
+            <span class="value-description digital-only">Print</span> <br />
             <button class="print-button" title="Print" onclick="printFunction()"><i class="fas fa-print"></i></button>
           </div>
         </div>
@@ -86,7 +86,7 @@
             ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
             fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
             mollit anim id est laborum."</p>
-         
+
         </div>
       </div>
 
@@ -97,17 +97,25 @@
             <div class="col-12">
               <h4 class="heading-primary">PERFORMANCE</h4>
               <div class="dropdown-list move-right">
-                <p class="dark-button-transparent">Data <i class="fas fa-plus-circle"></i></p>
+                <p class="dark-button-transparent digital-only">Data <i class="fas fa-plus-circle"></i></p>
                 <div class="dropdown-data">
                   <ul>
-                    <a href="/clients/<%= client._id %>/broadcasts/new"><li class="drop-item">Broadcast</li></a>
-                    <a href="/clients/<%= client._id %>/socials/new"><li class="drop-item">Social</li></a>
+                    <a href="/clients/<%= client._id %>/broadcasts/new">
+                      <li class="drop-item">Broadcast</li>
+                    </a>
+                    <a href="/clients/<%= client._id %>/socials/new">
+                      <li class="drop-item">Social</li>
+                    </a>
                   </ul>
-              </div>
+                </div>
               </div>
             </div>
           </div>
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link metrics" id="pills-overview-tab" data-toggle="pill" href="#pills-overview" role="tab"
+                aria-controls="pills-overview" aria-selected="false">Overview</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link metrics" id="pills-facebook-tab" data-toggle="pill" href="#pills-facebook" role="tab"
                 aria-controls="pills-facebook" aria-selected="false">Facebook</a>
@@ -128,14 +136,15 @@
           </ul>
 
           <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-facebook" role="tabpanel"
-              aria-labelledby="pills-facebook-tab">
-              <!-- Facebook performance -->
+              <div class="tab-pane fade show active" id="pills-overview" role="tabpanel"
+              aria-labelledby="pills-overview-tab">
+              <!-- Overview -->
               <table id="data-table" class="table data-table">
                 <thead>
                   <tr>
                     <td onclick="sortTable(0)">
-                       Campaign <!-- <i class="fas fa-sort"></i> -->
+                      Campaign
+                      <!-- <i class="fas fa-sort"></i> -->
                     </td>
                     <td>
                       Posts
@@ -152,27 +161,93 @@
                   </tr>
                 </thead>
                 <% client.socials.forEach(function(social){ %>
-                  <tbody>
-                    <tr>
+                <tbody>
+                  <tr>
+                    <td>
+                      <%= social.campaign %>
+                    </td>
+                    <td>
+                      <%= social.fb_posts %>
+                    </td>
+                    <td>
+                      <%= social.fb_reach %>
+                    </td>
+                    <td>
+                      <%= social.fb_engagement %>
+                    </td>
+                    <td>
+                      <%= social.fb_clicks %>
+                    </td>
+                  </tr>
+                  <tr>
                       <td>
-                        <%= social.campaign %>
-                      </td>
-                      <td>
-                        <%= social.fb_posts %>
-                      </td>
-                      <td>
-                        <%= social.fb_reach %>
-                      </td>
-                      <td>
-                        <%= social.fb_engagement %>
-                      </td>
-                      <td>
-                        <%= social.fb_clicks %>
-                      </td>
-                    </tr>
-                  </tbody>
-                 <% }) %>
-           
+                          <%= social.campaign %>
+                        </td>
+                        <td>
+                          <%= social.tw_tweets %>
+                        </td>
+                        <td>
+                          <%= social.tw_impressions %>
+                        </td>
+                        <td>
+                          <%= social.tw_engagement %>
+                        </td>
+                        <td>
+                          <%= social.tw_clicks %>
+                        </td>
+
+                  </tr>
+                </tbody>
+                <% }) %>
+
+              </table>
+            </div>
+            <div class="tab-pane fade show" id="pills-facebook" role="tabpanel"
+              aria-labelledby="pills-facebook-tab">
+              <!-- Facebook performance -->
+              <table id="data-table" class="table data-table">
+                <thead>
+                  <tr>
+                    <td onclick="sortTable(0)">
+                      Campaign
+                      <!-- <i class="fas fa-sort"></i> -->
+                    </td>
+                    <td>
+                      Posts
+                    </td>
+                    <td>
+                      Impressions
+                    </td>
+                    <td>
+                      Engagement
+                    </td>
+                    <td>
+                      Clicks
+                    </td>
+                  </tr>
+                </thead>
+                <% client.socials.forEach(function(social){ %>
+                <tbody>
+                  <tr>
+                    <td>
+                      <%= social.campaign %>
+                    </td>
+                    <td>
+                      <%= social.fb_posts %>
+                    </td>
+                    <td>
+                      <%= social.fb_reach %>
+                    </td>
+                    <td>
+                      <%= social.fb_engagement %>
+                    </td>
+                    <td>
+                      <%= social.fb_clicks %>
+                    </td>
+                  </tr>
+                </tbody>
+                <% }) %>
+
               </table>
             </div>
             <div class="tab-pane fade show" id="pills-twitter" role="tabpanel" aria-labelledby="pills-twitter-tab">
@@ -217,7 +292,7 @@
                     </td>
                   </tr>
                 </tbody>
-               <% }) %>
+                <% }) %>
               </table>
             </div>
             <div class="tab-pane fade show" id="pills-instagram" role="tabpanel" aria-labelledby="pills-instagram-tab">
@@ -245,9 +320,9 @@
                 <% client.socials.forEach(function(social){ %>
                 <tbody>
                   <tr>
-                      <td>
-                        <%= social.campaign %>
-                        </td>
+                    <td>
+                      <%= social.campaign %>
+                    </td>
                     <td>
                       <%= social.in_posts %>
                     </td>
@@ -291,27 +366,27 @@
                 <% client.broadcasts.forEach(function(broadcast){ %>
                 <tbody>
                   <tr>
-                      <td> 
-                      <%= broadcast.asset_name %>
-                        </td>
                     <td>
-                      <%= broadcast.exposures %> 
+                      <%= broadcast.asset_name %>
+                    </td>
+                    <td>
+                      <%= broadcast.exposures %>
                     </td>
                     <td>
                       <%= broadcast.duration %>
                     </td>
                     <td>
-                      <%= broadcast.me_value %> 
+                      <%= broadcast.me_value %>
                     </td>
                     <td>
-                      <%= broadcast.qi_value %> 
+                      <%= broadcast.qi_value %>
                     </td>
                   </tr>
                 </tbody>
                 <% }) %>
               </table>
             </div>
-           
+
           </div>
 
         </div>
@@ -323,26 +398,32 @@
           <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
             aria-controls="collapseExample">
             <h4 class="heading-primary">DELIVERY</h4>
+            
           </a>
           <a href="/clients/<%= client._id %>/rights/new"><button class="dark-button-transparent move-right">Add Rights
               <i class="fas fa-plus-circle"></i></button></a>
           <br>
           <br>
           <table id="data-table" style="width:100%;">
-
+            <thead>
             <tr>
               <td onclick="sortTable(0)">Category <i class="fas fa-sort"></i></td>
               <td>Detail</td>
               <td>Attachments</td>
+              <td>Delivery Date</td>
               <td>Progress</td>
+              <td></td>
             </tr>
+            </thead>
 
             <% client.rights.forEach(function(right){ %>
-            <tr>
+            <tr class="edit-on-hover">
               <td> <%= right.category %> </td>
               <td> <%= right.description%></td>
               <td> <%= right.attachments %></td>
+              <td><%= right.due_date.toLocaleDateString('en-GB') %> </td>
               <td> <%= right.progress %></td>
+              <td class="edit-hidden">Edit</td>
             </tr>
             <% }) %>
           </table>
@@ -350,6 +431,7 @@
       </div>
 
       <!-- End delivery section -->
+      
       <form action="/clients/<%= client._id %>?_method=DELETE" method="POST">
         <div class="button-group"><button onclick="deleteWarning()" class="warning-button">Delete</button></div>
       </form>

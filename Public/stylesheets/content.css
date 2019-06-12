@@ -356,11 +356,12 @@ button:hover > .fa-plus-circle {
   display:none;
   background-color:#ffffff;
 	box-shadow: inset 0px 0px 2px #ededed;
+	margin-right: 50px;
 }
 
 .dropdown-list {
 	cursor:pointer;
-	margin-right: 20px;
+	
 }
 
 .dropdown-list:hover {
@@ -370,12 +371,28 @@ button:hover > .fa-plus-circle {
 .dropdown-list:hover > .dropdown-data {
 	display:block;
 	position: absolute;
+
 }
 .drop-item {
 	padding:5px;
+	
 }
 .drop-item:hover {
 	background-color:#F5F8FA;
+}
+
+/* Hidden tables */
+
+.edit-hidden {
+	display:none;
+}
+
+.edit-hidden:hover{
+	cursor:pointer;
+}
+
+.edit-on-hover:hover > .edit-hidden{
+	display:block;
 }
 
 /* rights styles */
@@ -539,6 +556,7 @@ thead {
 tr {
 	border-top:0.5px solid #ededed;
 }
+
 
 .performance-table tr {
 	border:none;

@@ -10,6 +10,7 @@ var clientSchema= new mongoose.Schema({
   contact: String,
   email: String,
   contact_number: Number,
+  objectives: String,
   notes: String,
   rights: [
     {

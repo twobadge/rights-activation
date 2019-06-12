@@ -27,6 +27,8 @@ app.get("/", function (req, res) {
   res.redirect("/clients");
 })
 
+
+
 // =================================
 // Client routes
 // =================================s
@@ -166,7 +168,17 @@ app.post("/clients/:id/rights", function (req, res) {
 });
 
 //Edit rights
-
+app.get("/:right_id/edit", function (req, res) {
+  Right.findById(req.params.rights_id, function (err, foundRight) {
+    if (err) {
+      res.redirect("/clients");
+    } else {
+      res.render("./rights/edit", { 
+        client_id: req.params.id, right: foundRight
+      });
+    }
+  });
+})
 
 
 // =================================
