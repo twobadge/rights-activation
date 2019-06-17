@@ -395,16 +395,19 @@
       <!-- Delivery section  -->
       <div class="row general-row client-about-row">
         <div class="col-xs-12 col-lg-12 delivery-secton">
-          <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-            aria-controls="collapseExample">
-            <h4 class="heading-primary">DELIVERY</h4>
+          
+          
+          <a data-toggle="collapse" href="#display-client-rights" role="button" aria-expanded="false" aria-controls="display-client-rights"> <h4 class="heading-primary">DELIVERY <i class="fas fa-angle-down rotate-down"></i></h4></a>
+           
             
-          </a>
+        
           <a href="/clients/<%= client._id %>/rights/new"><button class="dark-button-transparent move-right">Add Rights
               <i class="fas fa-plus-circle"></i></button></a>
           <br>
+          <div class="collapse multi-collapse" id="display-client-rights">
+          <input type="text" class="search-bar" id="rights_search" onkeyup="searchrights()" placeholder="Search rights by category..." title="Search rights">
           <br>
-          <table id="data-table" style="width:100%;">
+          <table id="rightsTable" style="width:100%;">
             <thead>
             <tr>
               <td onclick="sortTable(0)">Category <i class="fas fa-sort"></i></td>
@@ -427,6 +430,7 @@
             </tr>
             <% }) %>
           </table>
+        </div>
         </div>
       </div>
 
