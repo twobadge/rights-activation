@@ -55,9 +55,7 @@ app.get("/clients", function (req, res) {
     if (err) {
       console.log("Error");
     } else {
-      res.render("clients", {
-        clients: clients
-      });
+      res.render("clients", {clients: clients});
     }
   });
 });
@@ -87,9 +85,7 @@ app.get("/clients/:id", function (req, res) {
       res.redirect("/clients");
     } else {
       // console.log(foundClient);
-      res.render("./clients/show", {
-        client: foundClient
-      });
+      res.render("./clients/show", {client: foundClient});
     }
   });
 });
@@ -313,7 +309,7 @@ app.post("/register", function(req, res){
   User.register(newUser, req.body.password, function(err, user){
     if(err){
       console.log(err);
-      res.render("register");
+      res.render("users/register");
     }
     passport.authenticate("local")(req, res, function(){
       res.redirect("/clients");
@@ -326,12 +322,25 @@ app.get("/login", function(req,  res){
   res.render("users/login")
 });
 
-//Handline login form
+//Handle login form
 app.post("/login", passport.authenticate("local", {
   successRedirect: "/clients",
   failureRedirect: "/login"}), 
   function(req, res){
 });
+
+//logout route
+app.get("/logout", function(req, res){
+  req.logout();
+  res.redirect("/clients");
+});
+
+function isLoggedIn(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  res.redirect("/login");
+}
 
 
 app.listen(3000)

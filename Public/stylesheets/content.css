@@ -56,7 +56,6 @@ li {
 	padding:0px;
 	background-color: #212944 !important;
 	font-size: 1rem;
-	box-shadow: 0 0 10px grey;
 }
 
 .primary-navs {
@@ -90,7 +89,7 @@ li {
 }
 
 .fixed-top {
-	z-index: 1010 !important;
+	z-index: 1010!important;
 }
 
 .col-lg-2 {
@@ -113,12 +112,9 @@ li {
 	font-size: 1em;
 	white-space: nowrap;
 	overflow: hidden;
-	/* border-right: 1px solid #ededed; */
 	float: left;
 	padding: 0px 10px 10px 10px;
-	/* background-color:#F5F8FA; */
 	background-color: #E3E8EE;
-	/* background-color: #F6F9FC; */
 	margin-top: 40px;
 }
 
@@ -663,7 +659,7 @@ button:focus {
   position: relative;
   min-height: 100vh;
   font-family:Roboto;
-  font-size:0.9rem;
+	font-size:0.9rem;
 }
 
 #content-wrap {
