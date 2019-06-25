@@ -1,0 +1,45 @@
+<% include ../partials/header %>
+
+<div class="container form-container">
+  <div class="row form-section form-header">
+    <div class="col-12">
+      <h5>Login Here</h5>
+    </div>
+  </div>
+  <!--  Business Details  -->
+  <form action="/login" method="POST">
+    
+    <!--  Conact Information  -->
+    <div class="row form-section">
+      <div class="col-4">
+        <p class="form-section-title">Contact Details</p>
+        <p class="form-description">Enter your details using this form</p>
+      </div>
+      <div class="col-8">
+        <div class="row">
+          <div class="col">
+
+            <label>Name</label>
+            <input type="text" name="username">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>Password</label>
+            <input type="text" name="password">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!--  Form submit  -->
+    <div class="row form-section form-footer">
+      <div class="col form-submit">
+        <button class="submit-form-button">Sign Up</button>
+      </div>
+  </form>
+</div>
+
+
+
+<% include ../partials/footer %>

@@ -492,11 +492,9 @@ button:hover > .fa-plus-circle {
 }
 
 .client-card-image {
-	padding:0px;
 	display: flex;
-	/* border:1px solid lightblue; */
 	padding:5px;
-	border-radius: 50%;
+	border-radius: 4px;
 	box-shadow: inset 0px 0px 2px #ededed;
 	
 }

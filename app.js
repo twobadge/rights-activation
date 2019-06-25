@@ -20,6 +20,19 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(methodOverride("_method"));
 
+// Passport configuration
+app.use(require("express-session")({
+  secret:"Once agains Rusty wins cutest dog!",
+  resave: false,
+  saveUnitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 //Environment variables
 mongoose.connect('mongodb://localhost:27017/rights_activation', {
   useNewUrlParser: true
@@ -285,6 +298,39 @@ app.post("/clients/:id/socials", function (req, res) {
       });
     }
   });
+});
+
+// =================================
+// Auth routes
+// =================================
+app.get("/register", function(req, res){
+  res.render("users/register");
+});
+
+//Handle signup logic
+app.post("/register", function(req, res){
+  var newUser = new User({username: req.body.username});
+  User.register(newUser, req.body.password, function(err, user){
+    if(err){
+      console.log(err);
+      res.render("register");
+    }
+    passport.authenticate("local")(req, res, function(){
+      res.redirect("/clients");
+    });
+  });
+});
+
+//Show login form
+app.get("/login", function(req,  res){
+  res.render("users/login")
+});
+
+//Handline login form
+app.post("/login", passport.authenticate("local", {
+  successRedirect: "/clients",
+  failureRedirect: "/login"}), 
+  function(req, res){
 });
 
 

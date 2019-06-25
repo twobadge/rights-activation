@@ -4,6 +4,7 @@ var mongoose  = require ("mongoose");
 var clientSchema= new mongoose.Schema({
   name: String,
   designation: String,
+  url: String,
   value: Number,
   start_date: Date,
   end_date: Date,
