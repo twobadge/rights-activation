@@ -77,16 +77,11 @@
 
       <!-- Objectives section -->
       <div class="row general-row client-about-row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-lg-12">
           <h4 class="heading-primary">OBJECTIVES</h4>
         </div>
         <div class="col-xs-12">
-          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum."</p>
-
+          <p><%= client.objectives %></p>
         </div>
       </div>
 
@@ -113,10 +108,6 @@
           </div>
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link metrics" id="pills-overview-tab" data-toggle="pill" href="#pills-overview" role="tab"
-                aria-controls="pills-overview" aria-selected="false">Overview</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link metrics" id="pills-facebook-tab" data-toggle="pill" href="#pills-facebook" role="tab"
                 aria-controls="pills-facebook" aria-selected="false">Facebook</a>
             </li>
@@ -136,72 +127,7 @@
           </ul>
 
           <div class="tab-content" id="pills-tabContent">
-              <div class="tab-pane fade show active" id="pills-overview" role="tabpanel"
-              aria-labelledby="pills-overview-tab">
-              <!-- Overview -->
-              <table id="data-table" class="table data-table">
-                <thead>
-                  <tr>
-                    <td onclick="sortTable(0)">
-                      Campaign
-                      <!-- <i class="fas fa-sort"></i> -->
-                    </td>
-                    <td>
-                      Posts
-                    </td>
-                    <td>
-                      Impressions
-                    </td>
-                    <td>
-                      Engagement
-                    </td>
-                    <td>
-                      Clicks
-                    </td>
-                  </tr>
-                </thead>
-                <% client.socials.forEach(function(social){ %>
-                <tbody>
-                  <tr>
-                    <td>
-                      <%= social.campaign %>
-                    </td>
-                    <td>
-                      <%= social.fb_posts %>
-                    </td>
-                    <td>
-                      <%= social.fb_reach %>
-                    </td>
-                    <td>
-                      <%= social.fb_engagement %>
-                    </td>
-                    <td>
-                      <%= social.fb_clicks %>
-                    </td>
-                  </tr>
-                  <tr>
-                      <td>
-                          <%= social.campaign %>
-                        </td>
-                        <td>
-                          <%= social.tw_tweets %>
-                        </td>
-                        <td>
-                          <%= social.tw_impressions %>
-                        </td>
-                        <td>
-                          <%= social.tw_engagement %>
-                        </td>
-                        <td>
-                          <%= social.tw_clicks %>
-                        </td>
 
-                  </tr>
-                </tbody>
-                <% }) %>
-
-              </table>
-            </div>
             <div class="tab-pane fade show" id="pills-facebook" role="tabpanel"
               aria-labelledby="pills-facebook-tab">
               <!-- Facebook performance -->

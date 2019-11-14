@@ -1,0 +1,78 @@
+<li class="nav-item">
+    <a class="nav-link metrics" id="pills-overview-tab" data-toggle="pill" href="#pills-overview" role="tab"
+      aria-controls="pills-overview" aria-selected="false">Overview</a>
+  </li>             
+             
+             
+             <div class="tab-pane fade show active" id="pills-overview" role="tabpanel"
+              aria-labelledby="pills-overview-tab">
+              <!-- Overview -->
+              <table id="data-table" class="table data-table">
+                <thead>
+                  <tr>
+                      <td>
+                          Platform
+                        </td>
+                    <td onclick="sortTable(0)">
+                      Campaign
+                      <!-- <i class="fas fa-sort"></i> -->
+                    </td>
+                    <td>
+                      Posts
+                    </td>
+                    <td>
+                      Impressions
+                    </td>
+                    <td>
+                      Engagement
+                    </td>
+                    <td>
+                      Clicks
+                    </td>
+                  </tr>
+                </thead>
+                <% client.socials.forEach(function(social){ %>
+                <tbody>
+                  <tr>
+                      <td>
+                          <%= social.platform %>
+                        </td>
+                    <td>
+                      <%= social.campaign %>
+                    </td>
+                    <td>
+                      <%= social.fb_posts %>
+                    </td>
+                    <td>
+                      <%= social.fb_reach %>
+                    </td>
+                    <td>
+                      <%= social.fb_engagement %>
+                    </td>
+                    <td>
+                      <%= social.fb_clicks %>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <%= social.campaign %>
+                        </td>
+                        <td>
+                          <%= social.tw_tweets %>
+                        </td>
+                        <td>
+                          <%= social.tw_impressions %>
+                        </td>
+                        <td>
+                          <%= social.tw_engagement %>
+                        </td>
+                        <td>
+                          <%= social.tw_clicks %>
+                        </td>
+
+                  </tr>
+                </tbody>
+                <% }) %>
+
+              </table>
+            </div>
