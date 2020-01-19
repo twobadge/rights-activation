@@ -361,10 +361,39 @@
       </div>
 
       <!-- End delivery section -->
-      
-      <form action="/clients/<%= client._id %>?_method=DELETE" method="POST">
-        <div class="button-group"><button onclick="deleteWarning()" class="warning-button">Delete</button></div>
-      </form>
+      <div class="button-group"><button  data-toggle="modal" data-target="#delete_modal" class="warning-button">Delete</button></div>
+
+      <div class="modal fade" id="delete_modal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Delete client?</h5>
+              
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>This action is irreversible.</p>
+              <form action="/clients/<%= client._id %>?_method=DELETE" method="POST">
+                <div class="button-group"><button class="warning-button">Delete</button></div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="secondary-button" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+    
     </div>
   </div>
 </div>
