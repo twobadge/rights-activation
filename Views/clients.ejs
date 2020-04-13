@@ -1,50 +1,57 @@
 <% include partials/header %>
 
-<div class="container-fluid">
-    
-  <div class="row general-row headline-values">
-    <div class="col">
-      <h3 style="display:inline;padding-left:10px;">Overview</h3>
-      <a title="add new client" href="/clients/new"><button class="dark-button move-right">New Client <i class="fas fa-plus-circle"></i></button></a>
-    </div>
-  </div>
-  <div class="row general-row">
-    <% clients.forEach(function(client){ %>
-  
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-        <a class="client-card-link" href="/clients/<%= client._id %>">
-      <div class="client-card-square">
-        <div class="row general-row">
-          <div class="col-2 client-card-image">
-            <img class="client-card-logo" alt="client logo" src="https://d2cx26qpfwuhvu.cloudfront.net/sale/wp-content/uploads/2018/07/23161039/UKFast.svg"></div>
-          <div class="col-10">
-            <p class="values"><%= client.name %> </p>
-            <p><%= client.designation %></p>
-          </div>
+    <div class="container">
+        <div class="row margin-top-20">
+            <div class="col-lg-12">
+                <h3 style="display:inline;">Overview</h3>
+                <a title="add new client" href="/clients/new"><button class="dark-button move-right">New Client <i class="fas fa-plus-circle"></i></button></a>
+            </div>
         </div>
-        <div class="row general-row client-card-details">
-          <div class="col">
-            <p> <span class="value-description"> Value</span> £<%= client.value %></p>
-            <p><span class="value-description"> Start:</span> <%= client.start_date.toLocaleDateString('en-GB') %> <span class="value-description"> |   Expiry: </span><%= client.end_date.toLocaleDateString('en-GB') %> </p>
-             
-          </div>
-        </div>
-        <!-- <div class="row general-row">
+        <div class="row">
+            <% clients.forEach(function(client){ %>
+
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                    <a class="client-card-link" href="/clients/<%= client._id %>">
+                        <div class="client-card-square">
+                            <div class="row general-row">
+                                <div class="col-2 client-card-image">
+                                    <img class="client-card-logo" alt="client logo" src="https://d2cx26qpfwuhvu.cloudfront.net/sale/wp-content/uploads/2018/07/23161039/UKFast.svg"></div>
+                                <div class="col-10">
+                                    <p class="values">
+                                        <%= client.name %>
+                                    </p>
+                                    <p>
+                                        <%= client.designation %>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row general-row client-card-details">
+                                <div class="col">
+                                    <p> <span class="value-description"> Value</span> £
+                                        <%= client.value %>
+                                    </p>
+                                    <p><span class="value-description"> Start:</span> <span class="value-description"> |   Expiry: </span>
+
+                                    </p>
+
+                                </div>
+                            </div>
+                            <!-- <div class="row general-row">
           <div class="col">
             <a href="/clients/<%= client._id %>"><button class="dark-button button-small">View</button></a>
             <a href="/clients/<%= client._id %>/edit"><button class="info-button button-small">Edit</button></a>
           </div>
         </div> -->
-      </div>
-      </a>
-    </div>
-    <% }) %>
+                        </div>
+                    </a>
+                </div>
+                <% }) %>
 
-  </div>
-
-
+        </div>
 
 
 
 
-<% include partials/footer %>
+
+
+        <% include partials/footer %>
