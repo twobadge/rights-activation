@@ -1,37 +1,48 @@
 <% include ../partials/header %>
 
-<div class="container">
-  <div class="row general-row headline-values">
-    <div class="col-lg-12 col-xs-12">
-        <h3>All Client Rights</h3>
+    <div class="container">
+        <div class="row margin-top-20">
+            <div class="col-lg-12">
+                <h3>ALL RIGHTS</h3>
+            </div>
+        </div>
+
+        <div class="client-about-row">
+            <div class="col-lg-12">
+                <input type="text" class="search-bar" id="rights_search" onkeyup="searchrights()" placeholder="SEARCH BY CATEGORY" title="Search rights">
+
+                <table id="rightsTable" style="width:100%;">
+                    <thead>
+                        <tr>
+                            <td>Category</td>
+                            <td>Detail</td>
+                            <td>Due Date</td>
+                            <td>Progress</td>
+                        </tr>
+                    </thead>
+                    <% rights.forEach(function(right){ %>
+                        <tr>
+                            <td>
+                                <%= right.category%>
+                            </td>
+                            <td>
+                                <%= right.description %>
+                            </td>
+                            <td>
+                                <%= right.due_date.toLocaleDateString('en-GB') %>
+                            </td>
+                            <td>
+                                <%= right.complete %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </table>
+            </div>
+        </div>
     </div>
-  </div>
-    
-  <div class="client-about-row">
-    <input type="text" class="search-bar" id="rights_search" onkeyup="searchrights()" placeholder="Search rights by category..." title="Search rights">
-   
-    <table id="rightsTable" style="width:100%;">
-        <tr>
-          <td>Category</td>
-          <td>Detail</td>
-          <td>Due Date</td>
-          <td>Progress</td>
-        </tr>
-        <% rights.forEach(function(right){ %>
-        <tr>
-          <td> <%= right.category%> </td>
-          <td> <%= right.description %></td>
-          <td> <%= right.due_date.toLocaleDateString('en-GB') %></td>
-          <td> <%= right.complete %></td>
-        </tr>
-        <% }) %>
-      </table>
- 
-  </div> 
-</div>
 
 
 
 
 
-<% include ../partials/footer %>
+    <% include ../partials/footer %>
