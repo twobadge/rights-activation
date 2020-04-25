@@ -40,6 +40,9 @@
                         <span class="value-description">Number</span> <br />
                         <span class="values"><%= client.contact_number %></span>
                     </div>
+                    <!-- <div class="col-xs-1">
+                        <button onclick="printFunction()">Print</button>
+                    </div> -->
                 </div>
 
                 <!--  <%= client.notes %> -->
@@ -62,8 +65,30 @@
                         <h4 class="heading-primary">PERFORMANCE</h4>
                     </div>
                     <div class="col-6">
-                        <div class="dropdown-list move-right">
-                            <button class="light-button digital-only">Data <i class="fas fa-plus-circle"></i></button>
+                        <!-- Button trigger modal -->
+                        <button class="light-button move-right" data-toggle="modal" data-target="#addDataModal">Data <i class="fas fa-plus-circle"></i></button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="addDataModal" tabindex="-1" role="dialog" aria-labelledby="addDataModal" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="addDataModal">Select the type of data to add</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <a href="/clients/<%= client._id %>/broadcasts/new">
+                                            <li class="drop-item">Broadcast</li>
+                                        </a>
+                                        <a href="/clients/<%= client._id %>/socials/new">
+                                            <li class="drop-item">Social</li>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Below dropdown stopped working so decided to add a bootstrap modal to save time -->
+                        <!-- <div class="dropdown-list move-right">
+                            <span class="light-button">Data <i class="fas fa-plus-circle"></i></span>
                             <div class="dropdown-data">
                                 <ul>
                                     <a href="/clients/<%= client._id %>/broadcasts/new">
@@ -74,8 +99,7 @@
                                     </a>
                                 </ul>
                             </div>
-
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-lg-12">
                         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -286,7 +310,7 @@
                         <a data-toggle="collapse" href="#display-client-rights" role="button" aria-expanded="true" aria-controls="display-client-rights">
                             <h4 class="heading-primary">DELIVERY <i class="fas fa-angle-down rotate-down"></i></h4>
                         </a>
-                        <a href="/clients/<%= client._id %>/rights/new"><button class="light-button move-right">Add Rights
+                        <a href="/clients/<%= client._id %>/rights/new"><button class="light-button move-right"> Rights
               <i class="fas fa-plus-circle"></i></button></a>
                         <br>
                         <div class="collapse show" id="display-client-rights">
@@ -324,33 +348,31 @@
                         </div>
                     </div>
                 </div>
-                <!-- End delivery section -->
-                <div class="button-group"><button data-toggle="modal" data-target="#delete_modal" class="warning-button">Delete</button></div>
+            </div>
+            <!-- End delivery section -->
+            <div class="button-group"><button data-toggle="modal" data-target="#delete_modal" class="warning-button">Delete</button></div>
 
-                <div class="modal fade" id="delete_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Delete client?</h5>
+            <div class="modal fade" id="delete_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Are you sure?</h5>
 
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-                            </div>
-                            <div class="modal-body">
-                                <p>This action is irreversible.</p>
-                                <form action="/clients/<%= client._id %>?_method=DELETE" method="POST">
-                                    <div class="button-group"><button class="warning-button">Delete</button></div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="secondary-button" data-dismiss="modal">Close</button>
-                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <p>Deleting a client is irreversible.</p>
+                            <form action="/clients/<%= client._id %>?_method=DELETE" method="POST">
+                                <button class="warning-button">Delete</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- End rights section -->
     <% include ../partials/footer %>

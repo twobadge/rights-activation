@@ -10,7 +10,7 @@
         <div class="row">
             <% clients.forEach(function(client){ %>
 
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
                     <a class="client-card-link" href="/clients/<%= client._id %>">
                         <div class="client-card-square">
                             <div class="row general-row">
@@ -36,22 +36,33 @@
 
                                 </div>
                             </div>
-                            <!-- <div class="row general-row">
-          <div class="col">
-            <a href="/clients/<%= client._id %>"><button class="dark-button button-small">View</button></a>
-            <a href="/clients/<%= client._id %>/edit"><button class="info-button button-small">Edit</button></a>
-          </div>
-        </div> -->
+
                         </div>
                     </a>
                 </div>
                 <% }) %>
 
         </div>
+        <div class="row">
+            <div class="dropdown-list move-right">
+                <span class="light-button">Data <i class="fas fa-plus-circle"></i></span>
+                <div class="dropdown-data">
+                    <ul>
+                        <a href="#">
+                            <li class="drop-item">Broadcast</li>
+                        </a>
+                        <a href="#">
+                            <li class="drop-item">Social</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
 
 
 
-        <% include partials/footer %>
+    <% include partials/footer %>
