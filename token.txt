@@ -1,0 +1,8 @@
+Generate token
+curl -u 'dGDETvg6fJKBGR91aKXYrZzop:Nhy6v2KHg6o7eU971sgtQ2Vgz9DSluR3F6UKpbreKRzh9gJvGF' \
+  --data 'grant_type=client_credentials' \
+  'https://api.twitter.com/oauth2/token'
+
+
+Twitter bearer token:
+AAAAAAAAAAAAAAAAAAAAAHkj%2BQAAAAAAX%2B3AMKL0U60qPh9s7HLsJ1hgP00%3DPknXv5RJYn17XLmvdDsoVCVpHAMovZEAv7SuEWKJEej28p3q9O
